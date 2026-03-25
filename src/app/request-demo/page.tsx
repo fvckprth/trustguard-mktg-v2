@@ -39,7 +39,7 @@ function toMailtoHref(values: DemoFormValues): string {
     body: toMailBody(values),
   });
 
-  return `mailto:contact@trustguardai.com?${params.toString()}`;
+  return `mailto:elena@trustguardai.com?${params.toString()}`;
 }
 
 export default function RequestDemoPage() {
