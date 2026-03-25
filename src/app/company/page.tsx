@@ -210,9 +210,9 @@ export default function CompanyPage() {
               <p>Sincerely,</p>
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-start gap-6">
               <div className="shrink-0 size-12 rounded-sm bg-muted/25" />
-              <div className="flex flex-col items-center gap-1">
+              <div className="flex flex-col items-start gap-1">
                 <p className="text-xl tracking-tight leading-tight text-foreground">
                   Elena K.
                 </p>
@@ -238,9 +238,9 @@ export default function CompanyPage() {
                 key={leader.name}
                 className="bg-surface rounded p-6 md:p-10 flex flex-col gap-10"
               >
-                <div className="flex items-center gap-6">
+                <div className="flex items-start gap-6">
                   <div className="shrink-0 size-12 rounded-sm bg-muted/25" />
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col items-start gap-1">
                     <p className="text-xl tracking-tight leading-tight text-foreground">
                       {leader.name}
                     </p>
