@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# cursor (local hook state)
+.cursor/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
