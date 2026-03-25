@@ -30,7 +30,7 @@ export function Overview() {
   return (
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
-        <h2 className="text-2xl md:text-[2rem] tracking-tight leading-tight">
+        <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight">
           AI-driven assessment for complex risk environments.
         </h2>
 
@@ -38,13 +38,13 @@ export function Overview() {
           {FLOW_CARDS.map((card) => (
             <div
               key={card.title}
-              className="bg-surface rounded-lg h-[280px] md:h-[400px] flex flex-col overflow-hidden"
+              className="bg-surface rounded-md h-[280px] md:h-[400px] flex flex-col overflow-hidden"
             >
               <div className="flex flex-col gap-1 p-4">
-                <p className="text-xl tracking-tight leading-tight text-foreground">
+                <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                   {card.title}
                 </p>
-                <p className="text-xl tracking-tight leading-tight text-muted">
+                <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
                   {card.subtitle}
                 </p>
               </div>

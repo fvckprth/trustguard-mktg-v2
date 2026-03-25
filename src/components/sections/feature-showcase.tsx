@@ -40,15 +40,15 @@ export function FeatureShowcase() {
         {FEATURES.map((feature) => (
           <div
             key={feature.title}
-            className={`bg-surface rounded h-auto md:h-[480px] flex flex-col md:flex-row items-center overflow-hidden ${
+            className={`bg-surface rounded-md h-auto md:h-[480px] flex flex-col md:flex-row items-center overflow-hidden ${
               feature.layout === "text-right" ? "md:flex-row-reverse" : ""
             }`}
           >
             <div className="w-full md:w-[480px] shrink-0 flex flex-col gap-1 justify-center p-6 md:p-10 md:h-full">
-              <p className="text-xl tracking-tight leading-tight text-foreground">
+              <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                 {feature.title}
               </p>
-              <p className="text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
+              <p className="text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
                 {feature.description}
               </p>
             </div>

@@ -100,10 +100,10 @@ export default function TermsPage() {
     <div className="flex flex-col gap-20 md:gap-40">
       <section className="pt-32 md:pt-52 px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
-          <h1 className="text-2xl md:text-[2rem] tracking-tight leading-tight text-foreground">
+          <h1 className="text-lg md:text-[2rem] tracking-tight leading-tight text-foreground">
             Terms of Service
           </h1>
-          <p className="mt-2 text-base tracking-tight leading-tight text-muted">
+          <p className="mt-2 text-sm md:text-base tracking-tight leading-tight text-muted">
             Effective March 1, 2025
           </p>
         </div>
@@ -114,13 +114,13 @@ export default function TermsPage() {
           <div className="max-w-3xl flex flex-col gap-14">
             {SECTIONS.map((section) => (
               <div key={section.heading} className="flex flex-col gap-4">
-                <h2 className="text-xl tracking-tight leading-tight text-foreground">
+                <h2 className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                   {section.heading}
                 </h2>
                 {section.paragraphs.map((paragraph, i) => (
                   <p
                     key={i}
-                    className="text-lg leading-relaxed text-muted"
+                    className="text-sm md:text-lg leading-relaxed text-muted"
                   >
                     {paragraph}
                   </p>

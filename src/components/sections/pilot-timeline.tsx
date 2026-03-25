@@ -34,7 +34,7 @@ export function PilotTimeline() {
   return (
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto flex flex-col items-center gap-10 md:gap-16">
-        <h2 className="text-2xl md:text-[2rem] tracking-tight leading-tight text-center">
+        <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
           30 day pilot
         </h2>
 
@@ -42,13 +42,13 @@ export function PilotTimeline() {
           {PHASES.map((phase) => (
             <div
               key={phase.day}
-              className="bg-surface rounded-lg h-auto md:h-[400px] flex flex-col overflow-hidden"
+              className="bg-surface rounded-md h-auto md:h-[400px] flex flex-col overflow-hidden"
             >
               <div className="flex flex-col gap-3 p-4">
-                <p className="text-xl tracking-tight leading-tight text-foreground">
+                <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                   {phase.day}
                 </p>
-                <p className="text-xl tracking-tight leading-tight text-muted">
+                <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
                   {phase.title}
                 </p>
               </div>
@@ -57,7 +57,7 @@ export function PilotTimeline() {
                 {phase.items.map((item) => (
                   <div key={item} className="flex items-center gap-4">
                     <RiCheckLine size={20} className="shrink-0 text-foreground" />
-                    <p className="text-xl tracking-tight leading-snug text-foreground">
+                    <p className="text-base md:text-xl tracking-tight leading-snug text-foreground">
                       {item}
                     </p>
                   </div>

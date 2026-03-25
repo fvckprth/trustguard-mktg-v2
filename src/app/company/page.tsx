@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { JsonLd } from "@/components/json-ld";
 
@@ -53,16 +54,19 @@ const LEADERS = [
   {
     name: "Elena Kvochko",
     role: "Founder & CEO",
+    photo: "/assets/elena-kvochko.jpeg",
     bio: "Building an AI-first platform to transform third-party risk. Adjunct professor at Cornell. Previously CISO at SAP, led cybersecurity at Barclays and Bank of America.",
   },
   {
     name: "Subbu Kandikattu",
     role: "Head of Technology",
+    photo: "/assets/subbu-kandikattu.jpeg",
     bio: "Leads TrustGuard\u2019s technology vision and engineering. Previously VP of Engineering at Hearst, Sr Engineering Manager at Amazon. Built systems at Microsoft and Expedia.",
   },
   {
     name: "Rajiv Pant",
     role: "Advisor to CEO & CTO",
+    photo: "/assets/rajiv-pant.jpeg",
     bio: "President at Flatiron Software and Snapshot AI. Practitioner of synthesis engineering\u2014AI-augmented software development. Former CTO of The New York Times, Chief Product & Technology Officer at Hearst and WSJ.",
   },
 ] as const;
@@ -106,11 +110,11 @@ export default function CompanyPage() {
       {/* Hero */}
       <section className="pt-32 md:pt-52 px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
-          <div className="flex flex-col gap-2 text-2xl md:text-[2rem] tracking-tight">
-            <p className="leading-tight text-foreground">
+          <div className="flex flex-col gap-2">
+            <p className="text-lg md:text-[20px] leading-none tracking-tight text-foreground">
               Built by Practitioners, for Practitioners
             </p>
-            <p className="leading-snug text-muted w-full md:w-1/2">
+            <p className="text-sm md:text-lg leading-snug text-muted w-full md:w-1/2 tracking-tight">
               We&apos;ve spent decades managing third-party risk at Fortune 500
               companies.
             </p>
@@ -118,7 +122,7 @@ export default function CompanyPage() {
           <div className="mt-16">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-foreground text-background h-10 px-5 rounded-full text-base tracking-tight leading-tight hover:opacity-80 transition-opacity"
+              className="inline-flex items-center justify-center bg-foreground text-background h-10 px-5 rounded-full text-sm md:text-base tracking-tight leading-tight hover:opacity-80 transition-opacity"
             >
               Contact us
             </Link>
@@ -129,7 +133,7 @@ export default function CompanyPage() {
       {/* Why we exist */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
-          <h2 className="text-2xl md:text-[2rem] tracking-tight leading-tight">
+          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight">
             Why we exist
           </h2>
 
@@ -137,12 +141,12 @@ export default function CompanyPage() {
             {STATS.map((stat) => (
               <div
                 key={stat.value}
-                className="bg-surface rounded min-h-[191px] p-6 md:p-10 flex flex-col justify-between gap-6"
+                className="bg-surface rounded-md min-h-[191px] p-6 md:p-10 flex flex-col justify-between gap-6"
               >
-                <p className="text-5xl md:text-[4rem] tracking-tighter leading-tight text-foreground">
+                <p className="text-3xl md:text-[4rem] tracking-tighter leading-tight text-foreground">
                   {stat.value}
                 </p>
-                <p className="text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
+                <p className="text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
                   {stat.label}
                 </p>
               </div>
@@ -154,7 +158,7 @@ export default function CompanyPage() {
       {/* Our approach */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-8 items-center">
-          <h2 className="text-2xl md:text-[2rem] tracking-tight leading-tight text-center">
+          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
             Our approach
           </h2>
 
@@ -162,12 +166,12 @@ export default function CompanyPage() {
             {APPROACH.map((item) => (
               <div
                 key={item.title}
-                className="bg-surface rounded min-h-[178px] p-6 md:p-10"
+                className="bg-surface rounded-md min-h-[178px] p-6 md:p-10"
               >
-                <p className="text-xl tracking-tight leading-tight text-foreground">
+                <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                   {item.title}
                 </p>
-                <p className="mt-1 text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
+                <p className="mt-1 text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
                   {item.description}
                 </p>
               </div>
@@ -179,14 +183,14 @@ export default function CompanyPage() {
       {/* Open letter */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
-          <div className="bg-surface p-6 md:p-16 lg:p-40 flex flex-col gap-10 md:gap-20">
-            <h2 className="text-2xl md:text-[2rem] tracking-tight leading-snug">
+          <div className="bg-surface rounded-md p-6 md:p-16 lg:p-40 flex flex-col gap-10 md:gap-20">
+            <h2 className="text-lg md:text-[2rem] tracking-tight leading-snug">
               An open letter to CISOs,
               <br />
               CROs, and Risk Professionals
             </h2>
 
-            <div className="text-xl md:text-[2rem] tracking-tight leading-snug text-muted space-y-6 md:space-y-8">
+            <div className="text-base md:text-[2rem] tracking-tight leading-snug text-muted space-y-6 md:space-y-8">
               <p>
                 Over my career&mdash;from leading cybersecurity at Barclays and
                 Bank of America, to serving as the first Chief Trust Officer at
@@ -246,12 +250,18 @@ export default function CompanyPage() {
             </div>
 
             <div className="flex items-start gap-6">
-              <div className="shrink-0 size-12 rounded-sm bg-muted/25" />
+              <Image
+                src="/assets/elena-kvochko.jpeg"
+                alt="Elena Kvochko"
+                width={48}
+                height={48}
+                className="shrink-0 size-12 rounded-sm object-cover"
+              />
               <div className="flex flex-col items-start gap-1">
-                <p className="text-xl tracking-tight leading-tight text-foreground">
+                <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                   Elena K.
                 </p>
-                <p className="text-xl tracking-tight leading-tight text-muted">
+                <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
                   Founder &amp; CEO
                 </p>
               </div>
@@ -263,7 +273,7 @@ export default function CompanyPage() {
       {/* Leadership */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
-          <h2 className="text-2xl md:text-[2rem] tracking-tight leading-tight text-center">
+          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
             Leadership
           </h2>
 
@@ -271,20 +281,26 @@ export default function CompanyPage() {
             {LEADERS.map((leader) => (
               <div
                 key={leader.name}
-                className="bg-surface rounded p-6 md:p-10 flex flex-col gap-10"
+                className="bg-surface rounded-md p-6 md:p-10 flex flex-col gap-10"
               >
                 <div className="flex items-start gap-6">
-                  <div className="shrink-0 size-12 rounded-sm bg-muted/25" />
+                  <Image
+                    src={leader.photo}
+                    alt={leader.name}
+                    width={48}
+                    height={48}
+                    className="shrink-0 size-12 rounded-sm object-cover"
+                  />
                   <div className="flex flex-col items-start gap-1">
-                    <p className="text-xl tracking-tight leading-tight text-foreground">
+                    <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                       {leader.name}
                     </p>
-                    <p className="text-xl tracking-tight leading-tight text-muted">
+                    <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
                       {leader.role}
                     </p>
                   </div>
                 </div>
-                <p className="text-xl leading-snug text-muted">
+                <p className="text-sm md:text-xl leading-snug text-muted">
                   {leader.bio}
                 </p>
               </div>

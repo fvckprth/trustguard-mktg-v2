@@ -50,7 +50,7 @@ export function CentralizeEvidenceIllustration() {
                 </span>
                 {v.reusable && (
                   <span
-                    className="text-xs leading-tight tracking-tight px-2 py-1 rounded-md shrink-0"
+                    className="text-xs leading-tight tracking-tight px-2 py-1 rounded-sm shrink-0"
                     style={{ background: COLOR.tagBg, color: COLOR.fg }}
                   >
                     Reusable

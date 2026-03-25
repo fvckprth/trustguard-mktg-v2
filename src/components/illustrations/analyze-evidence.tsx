@@ -88,11 +88,11 @@ export function AnalyzeEvidenceIllustration() {
             </span>
           </div>
           <div
-            className="w-full h-2 rounded-md overflow-hidden"
+            className="w-full h-2 rounded-sm overflow-hidden"
             style={{ background: COLOR.barTrack }}
           >
             <div
-              className="h-full rounded-md"
+              className="h-full rounded-sm"
               style={{ width: `${COVERAGE}%`, background: COLOR.barFill }}
             />
           </div>

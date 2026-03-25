@@ -34,7 +34,7 @@ export function Platform() {
   return (
     <section id="product" className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-16 items-center">
-        <h2 className="text-2xl md:text-[2rem] tracking-tight leading-tight text-center">
+        <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
           Evidence in. Findings out. Reports ready.
         </h2>
 
@@ -42,11 +42,11 @@ export function Platform() {
           {[0, 1, 2].map((row) => (
             <div key={row} className="grid md:grid-cols-2 gap-1">
               {CAPABILITIES.slice(row * 2, row * 2 + 2).map((cap) => (
-                <div key={cap.title} className="bg-surface rounded min-h-[151px] h-auto p-6 md:p-10">
-                  <p className="text-xl tracking-tight leading-tight text-foreground">
+                <div key={cap.title} className="bg-surface rounded-md min-h-[151px] h-auto p-6 md:p-10">
+                  <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                     {cap.title}
                   </p>
-                  <p className="text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
+                  <p className="text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
                     {cap.description}
                   </p>
                 </div>

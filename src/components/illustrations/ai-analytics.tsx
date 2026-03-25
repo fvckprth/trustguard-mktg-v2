@@ -57,7 +57,7 @@ export function AIAnalyticsIllustration() {
               {r.label}
             </span>
             <span
-              className="text-xs md:text-sm leading-tight tracking-tight whitespace-nowrap px-2.5 py-1.5 rounded-md shrink-0"
+              className="text-xs md:text-sm leading-tight tracking-tight whitespace-nowrap px-2.5 py-1.5 rounded-sm shrink-0"
               style={{
                 background: COLOR.badgeBg,
                 color: r.isGap ? COLOR.dim : COLOR.fg,

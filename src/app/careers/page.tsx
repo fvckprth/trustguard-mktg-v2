@@ -37,13 +37,13 @@ export default function CareersPage() {
       {/* Hero */}
       <section className="pt-32 md:pt-52 px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
-          <h1 className="text-2xl md:text-[2rem] tracking-tight leading-tight">
+          <h1 className="text-lg md:text-[2rem] tracking-tight leading-tight">
             Help us shape the future of TPRM
           </h1>
           <div className="mt-16">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-foreground text-background h-10 px-5 rounded-full text-base tracking-tight leading-tight hover:opacity-80 transition-opacity"
+              className="inline-flex items-center justify-center bg-foreground text-background h-10 px-5 rounded-full text-sm md:text-base tracking-tight leading-tight hover:opacity-80 transition-opacity"
             >
               Contact us
             </Link>
@@ -54,7 +54,7 @@ export default function CareersPage() {
       {/* Our approach */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-8 items-center">
-          <h2 className="text-2xl md:text-[2rem] tracking-tight leading-tight text-center">
+          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
             Our approach
           </h2>
 
@@ -62,12 +62,12 @@ export default function CareersPage() {
             {VALUES.map((value) => (
               <div
                 key={value.title}
-                className="bg-surface rounded min-h-[151px] p-6 md:p-10"
+                className="bg-surface rounded-md min-h-[151px] p-6 md:p-10"
               >
-                <p className="text-xl tracking-tight leading-tight text-foreground">
+                <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                   {value.title}
                 </p>
-                <p className="mt-1 text-xl leading-snug text-muted">
+                <p className="mt-1 text-sm md:text-xl leading-snug text-muted">
                   {value.description}
                 </p>
               </div>
@@ -79,12 +79,12 @@ export default function CareersPage() {
       {/* Why join us */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
-          <div className="bg-surface px-6 py-16 md:px-60 md:py-40 flex flex-col gap-10 md:gap-20">
-            <h2 className="text-2xl md:text-[2rem] tracking-tight leading-snug">
+          <div className="bg-surface rounded-md px-6 py-16 md:px-60 md:py-40 flex flex-col gap-10 md:gap-20">
+            <h2 className="text-lg md:text-[2rem] tracking-tight leading-snug">
               Why join us
             </h2>
 
-            <div className="text-xl md:text-[2rem] tracking-tight leading-snug text-muted space-y-6 md:space-y-8">
+            <div className="text-base md:text-[2rem] tracking-tight leading-snug text-muted space-y-6 md:space-y-8">
               <p>
                 We&apos;re building something meaningful: an AI-first platform
                 that turns compliance into confidence for organizations managing
@@ -111,7 +111,7 @@ export default function CareersPage() {
       {/* Open positions */}
       <section className="px-6 md:px-10 pb-20 md:pb-40">
         <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row md:items-center gap-8">
-          <div className="flex-1 flex flex-col gap-1 text-2xl md:text-[2rem] tracking-tight">
+          <div className="flex-1 flex flex-col gap-1 text-lg md:text-[2rem] tracking-tight">
             <p className="leading-tight text-foreground">Open positions</p>
             <p className="leading-snug text-muted w-full md:w-1/2">
               We&apos;re always looking for exceptional people. Even if you
@@ -120,7 +120,7 @@ export default function CareersPage() {
           </div>
           <Link
             href="/contact"
-            className="shrink-0 inline-flex items-center justify-center bg-foreground text-background h-10 px-5 rounded-full text-base tracking-tight leading-tight hover:opacity-80 transition-opacity"
+            className="shrink-0 inline-flex items-center justify-center bg-foreground text-background h-10 px-5 rounded-full text-sm md:text-base tracking-tight leading-tight hover:opacity-80 transition-opacity"
           >
             Contact us
           </Link>

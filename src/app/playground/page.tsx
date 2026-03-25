@@ -54,22 +54,22 @@ export default function PlaygroundPage() {
     <div className="pt-32 md:pt-52 px-6 md:px-10 pb-20 md:pb-40">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
         <div className="flex flex-col gap-2">
-          <h1 className="text-2xl md:text-[2rem] tracking-tight leading-tight">
+          <h1 className="text-lg md:text-[2rem] tracking-tight leading-tight">
             Illustration Playground
           </h1>
-          <p className="text-xl leading-snug text-muted">
+          <p className="text-sm md:text-xl leading-snug text-muted">
             Draft illustrations for the Overview and Feature Showcase sections.
           </p>
         </div>
 
         <div className="flex flex-col gap-10">
-          <h2 className="text-xl tracking-tight leading-tight">
+          <h2 className="text-base md:text-xl tracking-tight leading-tight">
             Overview Cards (3-up, h-400)
           </h2>
           <div className="grid md:grid-cols-3 gap-2">
             {OVERVIEW_ILLUSTRATIONS.map((item) => (
               <div key={item.title} className="flex flex-col gap-3">
-                <div className="bg-surface rounded-lg h-[400px] overflow-hidden p-4">
+                <div className="bg-surface rounded-md h-[400px] overflow-hidden p-4">
                   <div className="h-full min-h-0">
                     <IllustrationFadeFrame>
                       <item.Component />
@@ -90,13 +90,13 @@ export default function PlaygroundPage() {
         </div>
 
         <div className="flex flex-col gap-10">
-          <h2 className="text-xl tracking-tight leading-tight">
+          <h2 className="text-base md:text-xl tracking-tight leading-tight">
             Feature Showcase Cards (side panel, h-480)
           </h2>
           <div className="flex flex-col gap-6">
             {SHOWCASE_ILLUSTRATIONS.map((item) => (
               <div key={item.title} className="flex flex-col gap-3">
-                <div className="bg-surface rounded h-[480px] overflow-hidden p-4">
+                <div className="bg-surface rounded-md h-[480px] overflow-hidden p-4">
                   <div className="h-full min-h-0">
                     <IllustrationFadeFrame>
                       <item.Component />

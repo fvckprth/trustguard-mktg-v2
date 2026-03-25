@@ -12,7 +12,7 @@ export function Benefits() {
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center">
         <div className="p-10 md:p-40 shrink-0">
-          <h2 className="text-2xl md:text-[2rem] tracking-tight leading-snug max-w-full md:max-w-[320px]">
+          <h2 className="text-lg md:text-[2rem] tracking-tight leading-snug max-w-full md:max-w-[320px]">
             Complete visibility across your vendor portfolio
           </h2>
         </div>
@@ -21,10 +21,10 @@ export function Benefits() {
           {BENEFITS.map((benefit) => (
             <div
               key={benefit}
-              className="bg-surface flex items-center gap-4 p-6 md:p-10"
+              className="bg-surface rounded-md flex items-center gap-4 p-6 md:p-10"
             >
               <RiCheckLine size={20} className="shrink-0 text-foreground" />
-              <p className="text-xl tracking-tight leading-tight text-foreground">
+              <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                 {benefit}
               </p>
             </div>

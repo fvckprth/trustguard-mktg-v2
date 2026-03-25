@@ -35,10 +35,10 @@ export function Integrations() {
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto flex flex-col items-center gap-8">
         <div className="w-full max-w-[698px] flex flex-col gap-2 items-center text-center">
-          <p className="text-2xl md:text-[2rem] tracking-tight leading-tight text-foreground">
+          <p className="text-lg md:text-[2rem] tracking-tight leading-tight text-foreground">
             700+ integrations
           </p>
-          <p className="text-2xl md:text-[2rem] tracking-tight leading-[1.35] text-muted">
+          <p className="text-sm md:text-[2rem] tracking-tight leading-snug md:leading-[1.35] text-muted">
             Connect your existing tools and evidence sources without ripping out
             your stack.
           </p>
@@ -53,15 +53,15 @@ export function Integrations() {
               "linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%)",
           }}
         >
-          <div className="flex gap-2 w-max mx-auto">
+          <div className="flex gap-1.5 md:gap-2 w-max mx-auto">
             {[...LOGOS, ...LOGOS].map((item, i) => (
               <div
                 key={`${item.name}-${i}`}
-                className="w-[160px] h-[80px] shrink-0 bg-foreground/5 rounded-lg flex items-center justify-center"
+                className="w-[104px] h-[56px] md:w-[160px] md:h-[80px] shrink-0 bg-foreground/5 rounded-md flex items-center justify-center"
               >
                 <item.Logo
                   color="currentColor"
-                  className="h-6 w-auto text-foreground/50"
+                  className="h-[18px] md:h-6 w-auto text-foreground/50"
                 />
               </div>
             ))}
