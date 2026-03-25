@@ -6,6 +6,10 @@ const FOOTER_LINKS = {
     { label: "Company", href: "/company" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/trustguardai/",
+    },
   ],
   Legal: [
     { label: "Privacy", href: "/privacy" },
@@ -41,6 +45,9 @@ export function Footer() {
                     key={link.href}
                     href={link.href}
                     className="text-base tracking-tight leading-tight text-foreground hover:text-muted transition-colors"
+                    {...(link.href.startsWith("http")
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
                   >
                     {link.label}
                   </Link>
