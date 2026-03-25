@@ -8,8 +8,9 @@ import { CentralizeEvidenceIllustration } from "@/components/illustrations/centr
 import { VendorRiskRecordIllustration } from "@/components/illustrations/vendor-risk-record";
 
 export const metadata: Metadata = {
-  title: "Playground — TrustGuard AI",
+  title: "Playground",
   description: "Illustration drafts for review.",
+  robots: { index: false, follow: false },
 };
 
 const OVERVIEW_ILLUSTRATIONS = [

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — TrustGuard AI",
+  title: "Privacy Policy",
   description:
     "How OpenAdmin, Inc. collects, uses, and protects your information when you use TrustGuard AI.",
+  alternates: { canonical: "https://trustguardai.com/privacy" },
 };
 
 const SECTIONS = [

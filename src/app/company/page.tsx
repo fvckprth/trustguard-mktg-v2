@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
-  title: "Company — TrustGuard AI",
+  title: "Company",
   description:
     "Built by practitioners, for practitioners. We've spent decades managing third-party risk at Fortune 500 companies.",
+  alternates: { canonical: "https://trustguardai.com/company" },
 };
 
 const STATS = [
@@ -65,8 +67,41 @@ const LEADERS = [
   },
 ] as const;
 
+const companySchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "TrustGuard AI",
+  legalName: "OpenAdmin, Inc.",
+  url: "https://trustguardai.com",
+  logo: "https://trustguardai.com/assets/tg-logo.svg",
+  description:
+    "AI-powered third-party risk management platform built by practitioners who spent decades managing vendor risk at Fortune 500 companies.",
+  email: "contact@trustguardai.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "New York",
+    addressRegion: "NY",
+    addressCountry: "US",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Elena Kvochko",
+    jobTitle: "Founder & CEO",
+    description:
+      "Adjunct professor at Cornell. Previously CISO at SAP, led cybersecurity at Barclays and Bank of America.",
+  },
+  employee: LEADERS.map((l) => ({
+    "@type": "Person" as const,
+    name: l.name,
+    jobTitle: l.role,
+    description: l.bio,
+  })),
+};
+
 export default function CompanyPage() {
   return (
+    <>
+    <JsonLd data={companySchema} />
     <div className="flex flex-col gap-20 md:gap-40">
       {/* Hero */}
       <section className="pt-32 md:pt-52 px-6 md:px-10">
@@ -261,5 +296,6 @@ export default function CompanyPage() {
       {/* CTA */}
       <CtaBanner />
     </div>
+    </>
   );
 }

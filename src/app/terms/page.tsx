@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — TrustGuard AI",
+  title: "Terms of Service",
   description:
     "Terms governing your use of the TrustGuard AI platform, operated by OpenAdmin, Inc.",
+  alternates: { canonical: "https://trustguardai.com/terms" },
 };
 
 const SECTIONS = [

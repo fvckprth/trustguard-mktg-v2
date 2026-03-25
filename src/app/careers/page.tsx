@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Careers — TrustGuard AI",
-  description: "Help us shape the future of TPRM.",
+  title: "Careers",
+  description:
+    "Join the team building the future of third-party risk management. Open roles at TrustGuard AI.",
+  alternates: { canonical: "https://trustguardai.com/careers" },
 };
 
 const VALUES = [

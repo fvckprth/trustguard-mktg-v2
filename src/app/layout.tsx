@@ -12,9 +12,29 @@ const fkGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "TrustGuard AI — Minimize your third-party risk",
+  metadataBase: new URL("https://trustguardai.com"),
+  title: {
+    default: "TrustGuard AI — Minimize your third-party risk",
+    template: "%s — TrustGuard AI",
+  },
   description:
     "The most advanced assessment platform to improve review speed, visibility, and audit readiness.",
+  openGraph: {
+    type: "website",
+    siteName: "TrustGuard AI",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  alternates: {
+    canonical: "https://trustguardai.com",
+  },
 };
 
 export default function RootLayout({
