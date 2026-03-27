@@ -84,9 +84,6 @@ export default function PrivacyPage() {
           <h1 className="text-lg md:text-[2rem] tracking-tight leading-tight text-foreground">
             Privacy Policy
           </h1>
-          <p className="mt-2 text-sm md:text-base tracking-tight leading-tight text-muted">
-            Effective March 1, 2025
-          </p>
         </div>
       </section>
 

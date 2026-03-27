@@ -13,9 +13,14 @@ const NAV_LINKS = [
 export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [atBottom, setAtBottom] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 700);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 700);
+      const remaining = document.documentElement.scrollHeight - window.scrollY - window.innerHeight;
+      setAtBottom(remaining < 200);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -24,7 +29,7 @@ export function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-10 transition-colors duration-300 ${
-        scrolled ? "bg-background" : ""
+        scrolled && !atBottom ? "bg-background" : ""
       }`}
     >
       <nav className="max-w-[1280px] mx-auto h-16 flex items-center justify-between">
