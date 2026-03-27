@@ -291,7 +291,7 @@ export default function CompanyPage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <FadeUp delay={60}>
-              <div className="bg-background shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
+              <div className="bg-[#191919] shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
                 <div className="flex items-center gap-6">
                   <Image
                     src={FOUNDER.photo}
@@ -301,15 +301,15 @@ export default function CompanyPage() {
                     className="shrink-0 size-12 object-cover"
                   />
                   <div className="flex flex-col items-start gap-1">
-                    <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
+                    <p className="text-base md:text-xl tracking-tight leading-tight text-[#F8F5F0]">
                       {FOUNDER.name}
                     </p>
-                    <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
+                    <p className="text-sm md:text-xl tracking-tight leading-tight text-[#F8F5F0]/50">
                       {FOUNDER.role}
                     </p>
                   </div>
                 </div>
-                <p className="text-sm md:text-xl leading-snug text-muted">
+                <p className="text-sm md:text-xl leading-snug text-[#F8F5F0]/50">
                   {FOUNDER.bio}
                 </p>
               </div>
@@ -317,7 +317,7 @@ export default function CompanyPage() {
 
             {INVESTORS.map((investor, i) => (
               <FadeUp key={investor.name} delay={(i + 1) * 60 + 60}>
-                <div className="bg-background shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
+                <div className="bg-[#191919] shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
                   <div className="flex items-center gap-6">
                     <Image
                       src={investor.photo}
@@ -327,16 +327,16 @@ export default function CompanyPage() {
                       className="shrink-0 size-12 object-cover"
                     />
                     <div className="flex flex-col items-start gap-1">
-                      <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
+                      <p className="text-base md:text-xl tracking-tight leading-tight text-[#F8F5F0]">
                         {investor.name}
                       </p>
-                      <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
+                      <p className="text-sm md:text-xl tracking-tight leading-tight text-[#F8F5F0]/50">
                         {investor.role}
                       </p>
                     </div>
                   </div>
                   {investor.bio && (
-                    <p className="text-sm md:text-xl leading-snug text-muted">
+                    <p className="text-sm md:text-xl leading-snug text-[#F8F5F0]/50">
                       {investor.bio}
                     </p>
                   )}
