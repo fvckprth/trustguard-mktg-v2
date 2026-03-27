@@ -54,7 +54,7 @@ const CAPABILITIES: {
 export function Platform() {
   return (
     <section id="product" className="px-6 md:px-10">
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-16 items-center">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-8 md:gap-16 items-center">
         <FadeUp>
           <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
             Evidence in. Findings out. Reports ready.

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CtaBanner } from "@/components/sections/cta-banner";
 import { FadeUp } from "@/components/fade-up";
 
 export const metadata: Metadata = {
@@ -44,9 +45,9 @@ export default function CareersPage() {
       <section className="pt-16 md:pt-32 px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col items-center">
           <FadeUp>
-            <h1 className="text-[40px] md:text-[64px] leading-tight tracking-tight text-foreground text-center">
-              Shape the Future of
-              <br />
+            <h1 className="text-[32px] md:text-[64px] leading-tight tracking-tight text-foreground text-center text-balance">
+              Shape the Future of{" "}
+              <br className="hidden md:block" />
               Compliance Assessment
             </h1>
           </FadeUp>
@@ -125,7 +126,7 @@ export default function CareersPage() {
       </section>
 
       {/* Open positions */}
-      <section className="px-6 md:px-10 pb-20 md:pb-40">
+      <section className="px-6 md:px-10">
         <FadeUp>
           <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row md:items-center gap-8">
             <div className="flex-1 flex flex-col gap-1 text-lg md:text-[2rem] tracking-tight">
@@ -144,6 +145,9 @@ export default function CareersPage() {
           </div>
         </FadeUp>
       </section>
+
+      {/* CTA */}
+      <CtaBanner />
     </div>
   );
 }

@@ -45,7 +45,7 @@ export function PilotTimeline() {
           </h2>
         </FadeUp>
 
-        <div className="w-full flex flex-col md:flex-row items-stretch gap-6">
+        <div className="w-full flex flex-col md:flex-row items-center md:items-stretch gap-6">
           {STEPS.map((step, i) => (
             <Fragment key={step.label}>
               {i > 0 && (
@@ -64,7 +64,7 @@ export function PilotTimeline() {
               )}
               <FadeUp delay={80 + i * 80} className="flex-1">
                 <div className="bg-background h-full flex flex-col gap-8">
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left">
                     <p className="font-mono text-base md:text-xl tracking-tight leading-tight text-accent">
                       {step.label}
                     </p>

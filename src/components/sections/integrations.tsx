@@ -43,8 +43,8 @@ export function Integrations() {
   return (
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto">
-      <div className="bg-[#191919] px-6 md:px-20 py-20 md:py-20 shadow-2xl overflow-hidden">
-      <div className="flex flex-col items-center gap-8">
+      <div className="bg-[#191919] px-6 md:px-20 py-12 md:py-20 shadow-2xl overflow-hidden">
+      <div className="flex flex-col items-center gap-6 md:gap-8">
         <FadeUp className="w-full max-w-[700px] flex flex-col gap-4 items-center text-center">
           <p className="text-2xl md:text-4xl tracking-tight leading-tight text-white">
             700+ integrations
@@ -55,37 +55,37 @@ export function Integrations() {
         </FadeUp>
 
         <FadeUp delay={100} className="w-full">
-          <div className="flex flex-col gap-3 -mx-6 md:-mx-20">
+          <div className="flex flex-col gap-2 md:gap-3 -mx-6 md:-mx-20 [--row-offset:-2.25rem] md:[--row-offset:-3.875rem] [--fade-start:12%] [--fade-end:88%] md:[--fade-start:8%] md:[--fade-end:92%]">
             {ROWS.map((row, rowIndex) => (
               <div
                 key={rowIndex}
                 className="w-full overflow-hidden"
                 style={{
                   maskImage:
-                    "linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+                    "linear-gradient(90deg, transparent 0%, #000 var(--fade-start), #000 var(--fade-end), transparent 100%)",
                   WebkitMaskImage:
-                    "linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+                    "linear-gradient(90deg, transparent 0%, #000 var(--fade-start), #000 var(--fade-end), transparent 100%)",
                 }}
               >
                 <div
-                  className="flex gap-3"
+                  className="flex gap-2 md:gap-3"
                   style={{
-                    transform: rowIndex % 2 === 1 ? "translateX(calc(-3.5rem - 0.125rem))" : undefined,
+                    transform: rowIndex % 2 === 1 ? "translateX(var(--row-offset))" : undefined,
                   }}
                 >
                   {[...row, ...row, ...row].map((item, i) => (
                     <div
                       key={`${item.name}-${rowIndex}-${i}`}
-                      className="w-20 h-20 md:w-28 md:h-28 shrink-0 bg-white/5 flex flex-col items-center justify-center gap-3"
+                      className="w-16 h-16 md:w-28 md:h-28 shrink-0 bg-white/5 flex flex-col items-center justify-center gap-0 md:gap-3"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={item.src}
                         alt={item.name}
-                        className="h-5 md:h-6 w-auto shrink-0"
+                        className="h-5 md:h-7 w-auto shrink-0"
                         loading="lazy"
                       />
-                      <span className="text-xs md:text-sm text-white/60 tracking-tight leading-tight">
+                      <span className="hidden md:block text-sm text-white/60 tracking-tight leading-tight">
                         {item.name}
                       </span>
                     </div>

@@ -32,7 +32,7 @@ export function Hero() {
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 pt-28 md:pt-[160px] flex flex-col">
         <FadeUp>
           <h1
-            className="text-[40px] md:text-[64px] leading-[1.25] tracking-[-0.02em] text-[#191919] text-left md:pl-[120px] text-pretty"
+            className="text-[32px] md:text-[64px] leading-[1.25] tracking-[-0.02em] text-[#191919] text-left md:pl-[120px] text-pretty"
             style={{ fontFeatureSettings: "'ordn' 1, 'ss04' 1, 'liga' 0, 'lnum' 1, 'tnum' 1" }}
           >
             Native Agentic AI.

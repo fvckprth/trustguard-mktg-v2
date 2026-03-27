@@ -10,8 +10,8 @@ const BENEFITS = [
 
 export function Benefits() {
   return (
-    <section className="px-6 md:px-10">
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-10 p-20 bg-[#191919]/5">
+    <section className="md:px-10">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-8 md:gap-10 px-6 py-10 md:p-20 md:bg-[#191919]/5">
         <FadeUp>
           <h2 className="text-lg md:text-[2rem] tracking-tight leading-snug text-left">
             Why Teams Switch to TrustGuard

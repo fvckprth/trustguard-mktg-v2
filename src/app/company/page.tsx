@@ -118,7 +118,7 @@ export default function CompanyPage() {
           <FadeUp delay={100}>
             <Link
               href="/request-demo"
-              className="mt-16 font-mono bg-[#191919] text-white h-14 md:h-[64px] px-8 md:px-[40px] inline-flex items-center justify-center text-base md:text-[24px] tracking-[-0.04em] shadow-[2px_2px_7px_0px_rgba(0,0,0,0.08),8px_9px_13px_0px_rgba(0,0,0,0.07)] hover:bg-background hover:text-accent transition-colors"
+              className="mt-8 md:mt-16 font-mono bg-[#191919] text-white h-14 md:h-[64px] px-8 md:px-[40px] inline-flex items-center justify-center text-base md:text-[24px] tracking-[-0.04em] shadow-[2px_2px_7px_0px_rgba(0,0,0,0.08),8px_9px_13px_0px_rgba(0,0,0,0.07)] hover:bg-background hover:text-accent transition-colors"
             >
               Request a demo
             </Link>
@@ -127,8 +127,8 @@ export default function CompanyPage() {
       </section>
 
       {/* Why we exist */}
-      <section className="px-6 md:px-10">
-        <div className="max-w-[1280px] mx-auto bg-[#191919]/5 px-20 py-40 flex flex-col gap-8">
+      <section className="md:px-10">
+        <div className="max-w-[1280px] mx-auto md:bg-[#191919]/5 px-6 py-10 md:px-20 md:py-40 flex flex-col gap-8">
           <FadeUp>
             <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight">
               Why we exist
@@ -141,7 +141,7 @@ export default function CompanyPage() {
                 <div
                   className="bg-accent shadow-2xl min-h-[191px] p-6 md:p-10 flex flex-col justify-between gap-6"
                 >
-                  <p className="text-3xl md:text-[4rem] tracking-tighter leading-tight text-white">
+                  <p className="text-[48px] md:text-[4rem] tracking-tighter leading-tight text-white">
                     {stat.value}
                   </p>
                   <p className="text-sm md:text-xl leading-snug text-white/50">

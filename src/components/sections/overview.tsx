@@ -30,9 +30,9 @@ const FLOW_CARDS: {
 export function Overview() {
   return (
     <section className="px-6 md:px-10">
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-8 md:gap-16">
         <FadeUp>
-          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight">
+          <h2 className="text-lg md:text-[2rem] tracking-tight leading-normal md:leading-tight text-center md:text-left">
             Ingest evidence. Analyze risk. Produce audit-ready outputs.
           </h2>
         </FadeUp>

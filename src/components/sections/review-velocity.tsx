@@ -10,12 +10,12 @@ const STATS = [
 export function ReviewVelocity() {
   return (
     <section className="px-6 md:px-10">
-      <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row md:items-center gap-16 md:gap-20">
+      <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row md:items-center gap-8 md:gap-20">
         {/* Left – headline + CTA */}
         <div className="flex flex-col gap-10 md:flex-1">
           <FadeUp>
             <div className="flex flex-col gap-2 text-lg md:text-[2.5rem] tracking-tight leading-snug">
-              <p className="text-foreground">Review more with the same team</p>
+              <p className="text-foreground">Review more with the same team.</p>
               <p className="text-[#191919]">Broader coverage. Richer findings.</p>
             </div>
           </FadeUp>

@@ -28,7 +28,7 @@ export function CtaBanner() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1280px] mx-auto flex flex-col items-center gap-20">
+      <div className="relative z-10 max-w-[1280px] mx-auto flex flex-col items-center gap-8 md:gap-20">
         <FadeUp>
           <h2 className="text-2xl md:text-[5rem] tracking-tighter leading-tight text-center">
           Deeper coverage.
