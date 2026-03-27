@@ -3,17 +3,17 @@ import { FadeUp } from "@/components/fade-up";
 const CAPABILITIES = [
   {
     title: "Organize Evidence",
-    description: "Upload, version, and reuse files across assessments. Full audit trail on every artifact.",
+    description: "Version and reuse files across assessments with full audit trails.",
   },
   {
     title: "Assess Against Frameworks",
     description:
-      "Map evidence to controls across SOC 2, ISO, FedRAMP, NIST, or custom frameworks.",
+      "Map evidence to controls for any framework.",
   },
   {
     title: "Surface Gaps",
     description:
-      "Cross-reference claims against the full evidence set. Flag inconsistencies automatically.",
+      "Flag gaps and inconsistencies across your evidence set.",
   },
   {
     title: "Generate Findings",
@@ -28,7 +28,7 @@ const CAPABILITIES = [
   {
     title: "Produce Reports",
     description:
-      "Export control breakdowns, summaries, and evidence packages for auditors and executives.",
+      "Control breakdowns, summaries, and evidence packages — export-ready.",
   },
 ] as const;
 
@@ -42,22 +42,18 @@ export function Platform() {
           </h2>
         </FadeUp>
 
-        <div className="w-full flex flex-col gap-6">
-          {[0, 1, 2].map((row) => (
-            <div key={row} className="grid md:grid-cols-2 gap-6">
-              {CAPABILITIES.slice(row * 2, row * 2 + 2).map((cap, i) => (
-                <FadeUp key={cap.title} delay={(row * 2 + i) * 60} className="h-full">
-                  <div className="bg-accent shadow-2xl min-h-[151px] h-full p-6 md:p-10">
-                    <p className="text-base md:text-xl tracking-tight leading-tight text-white">
-                      {cap.title}
-                    </p>
-                    <p className="text-sm md:text-xl leading-snug text-white/50 max-w-full md:max-w-[75%]">
-                      {cap.description}
-                    </p>
-                  </div>
-                </FadeUp>
-              ))}
-            </div>
+        <div className="w-full grid md:grid-cols-2 md:auto-rows-[1fr] gap-6">
+          {CAPABILITIES.map((cap, i) => (
+            <FadeUp key={cap.title} delay={i * 60} className="h-full">
+              <div className="bg-accent shadow-2xl h-full p-6 md:p-10">
+                <p className="text-base md:text-xl tracking-tight leading-tight text-white">
+                  {cap.title}
+                </p>
+                <p className="text-sm md:text-xl leading-snug text-white/50 max-w-full md:max-w-[75%]">
+                  {cap.description}
+                </p>
+              </div>
+            </FadeUp>
           ))}
         </div>
       </div>

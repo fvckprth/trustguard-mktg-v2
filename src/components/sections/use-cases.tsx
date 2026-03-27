@@ -28,7 +28,7 @@ export function UseCases() {
         <Dithering
           speed={0.52}
           shape="simplex"
-          type="bayer"
+          type="8x8"
           size={11}
           scale={1}
           colorFront="#FFFFFF"
