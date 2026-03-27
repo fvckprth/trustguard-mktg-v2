@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 const STATS = [
   {
     value: "98%",
-    label: "of orgs have vendor relationships that have been breached",
+    label: "of orgs have a breached vendor relationship",
   },
   {
     value: "40+",
     label:
-      "hours invested toward completing a single vendor security assessment",
+      "hours per vendor security assessment",
   },
   {
     value: "$4.5M+",
@@ -107,34 +107,28 @@ export default function CompanyPage() {
     <div className="flex flex-col gap-20 md:gap-40">
       {/* Hero */}
       <section className="pt-16 md:pt-32 px-6 md:px-10">
-        <div className="max-w-[1280px] mx-auto">
+        <div className="max-w-[1280px] mx-auto flex flex-col items-center">
           <FadeUp>
-            <div className="flex flex-col gap-2">
-              <p className="text-lg md:text-[20px] leading-none tracking-tight text-foreground">
-                Built by Practitioners, for Practitioners
-              </p>
-              <p className="text-sm md:text-lg leading-snug text-muted w-full md:w-1/2 tracking-tight">
-                We&apos;ve spent decades managing compliance and risk at Fortune 500
-                companies.
-              </p>
-            </div>
+            <h1 className="text-[40px] md:text-[64px] leading-tight tracking-tight text-foreground text-center">
+              Built by Practitioners,
+              <br />
+              for Practitioners
+            </h1>
           </FadeUp>
           <FadeUp delay={100}>
-            <div className="mt-16">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center bg-accent text-white h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-[#152E6B]"
-              >
-                Contact us
-              </Link>
-            </div>
+            <Link
+              href="/request-demo"
+              className="mt-16 font-mono bg-[#191919] text-white h-14 md:h-[64px] px-8 md:px-[40px] inline-flex items-center justify-center text-base md:text-[24px] tracking-[-0.04em] shadow-[2px_2px_7px_0px_rgba(0,0,0,0.08),8px_9px_13px_0px_rgba(0,0,0,0.07)] hover:bg-background hover:text-accent transition-colors"
+            >
+              Request a demo
+            </Link>
           </FadeUp>
         </div>
       </section>
 
       {/* Why we exist */}
       <section className="px-6 md:px-10">
-        <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
+        <div className="max-w-[1280px] mx-auto bg-[#191919]/5 px-20 py-40 flex flex-col gap-8">
           <FadeUp>
             <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight">
               Why we exist
@@ -150,7 +144,7 @@ export default function CompanyPage() {
                   <p className="text-3xl md:text-[4rem] tracking-tighter leading-tight text-white">
                     {stat.value}
                   </p>
-                  <p className="text-sm md:text-xl leading-snug text-white/50 max-w-full md:max-w-[75%]">
+                  <p className="text-sm md:text-xl leading-snug text-white/50">
                     {stat.label}
                   </p>
                 </div>
@@ -173,12 +167,12 @@ export default function CompanyPage() {
             {APPROACH.map((item, i) => (
               <FadeUp key={item.title} delay={i * 60}>
                 <div
-                  className="bg-[#F3F3F3] shadow-2xl min-h-[178px] p-6 md:p-10 flex flex-col gap-2"
+                  className="bg-background shadow-2xl min-h-[178px] p-6 md:p-10 flex flex-col gap-2"
                 >
                   <p className="text-base md:text-xl tracking-tight leading-tight font-mono text-accent">
                     {item.title}
                   </p>
-                  <p className="text-sm md:text-xl leading-snug text-black max-w-full md:max-w-[75%]">
+                  <p className="text-sm md:text-xl leading-snug text-[#191919] max-w-full md:max-w-[75%]">
                     {item.description}
                   </p>
                 </div>
@@ -192,8 +186,15 @@ export default function CompanyPage() {
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
           <FadeUp>
-            <div className="bg-accent shadow-2xl p-6 md:p-16 lg:p-40 flex flex-col gap-10 md:gap-20">
-              <h2 className="text-lg md:text-[2rem] tracking-tight leading-snug text-white">
+            <div className="bg-accent shadow-2xl p-6 md:p-16 lg:p-60 flex flex-col gap-10 md:gap-20">
+              <Image
+                src="/assets/tg-logo.svg"
+                alt="TrustGuard AI"
+                width={89}
+                height={24}
+                className="h-6 w-auto brightness-0 invert opacity-25 self-start"
+              />
+              <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-white">
                 An open letter to CISOs,
                 <br />
                 CROs, and Risk Professionals
@@ -259,7 +260,7 @@ export default function CompanyPage() {
                   alt="Elena Kvochko"
                   width={48}
                   height={48}
-                  className="shrink-0 size-12 rounded-sm object-cover"
+                  className="shrink-0 size-12 object-cover"
                 />
                 <div className="flex flex-col items-start gap-1">
                   <p className="text-base md:text-xl tracking-tight leading-tight text-white">
@@ -286,7 +287,7 @@ export default function CompanyPage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <FadeUp delay={60}>
-              <div className="bg-[#F3F3F3] shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
+              <div className="bg-background shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
                 <div className="flex items-start gap-6">
                   <Image
                     src={FOUNDER.photo}
@@ -312,7 +313,7 @@ export default function CompanyPage() {
 
             {INVESTORS.map((investor, i) => (
               <FadeUp key={investor.name} delay={(i + 1) * 60 + 60}>
-                <div className="bg-[#F3F3F3] shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
+                <div className="bg-background shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
                   <div className="flex items-start gap-6">
                     <Image
                       src={investor.photo}

@@ -11,7 +11,7 @@ const STEPS = [
       "Import vendors and policies",
       "Organize your portfolio",
     ],
-    cardBg: "bg-black",
+    cardBg: "bg-[#191919]",
   },
   {
     label: "Assess",
@@ -51,13 +51,13 @@ export function PilotTimeline() {
               {i > 0 && (
                 <>
                   <div className="hidden md:flex items-center justify-center shrink-0">
-                    <div className="w-10 h-10 bg-black/5 flex items-center justify-center">
-                      <RiArrowRightLine size={20} className="text-black/50" />
+                    <div className="w-10 h-10 bg-[#191919]/5 flex items-center justify-center">
+                      <RiArrowRightLine size={20} className="text-[#191919]/50" />
                     </div>
                   </div>
                   <div className="flex md:hidden items-center justify-center">
-                    <div className="w-10 h-10 bg-black/5 flex items-center justify-center">
-                      <RiArrowRightLine size={20} className="text-black/50 rotate-90" />
+                    <div className="w-10 h-10 bg-[#191919]/5 flex items-center justify-center">
+                      <RiArrowRightLine size={20} className="text-[#191919]/50 rotate-90" />
                     </div>
                   </div>
                 </>
@@ -68,7 +68,7 @@ export function PilotTimeline() {
                     <p className="font-mono text-base md:text-xl tracking-tight leading-tight text-accent">
                       {step.label}
                     </p>
-                    <p className="text-sm md:text-lg tracking-tight leading-snug text-black">
+                    <p className="text-sm md:text-lg tracking-tight leading-snug text-[#191919]">
                       {step.description}
                     </p>
                   </div>

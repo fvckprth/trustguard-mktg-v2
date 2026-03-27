@@ -74,12 +74,12 @@ export default function CareersPage() {
             {VALUES.map((value, i) => (
               <FadeUp key={value.title} delay={i * 60}>
                 <div
-                  className="bg-[#F3F3F3] shadow-2xl min-h-[151px] p-6 md:p-10 flex flex-col gap-2"
+                  className="bg-background shadow-2xl min-h-[151px] p-6 md:p-10 flex flex-col gap-2"
                 >
                   <p className="text-base md:text-xl tracking-tight leading-tight font-mono text-accent">
                     {value.title}
                   </p>
-                  <p className="text-sm md:text-xl leading-snug text-black">
+                  <p className="text-sm md:text-xl leading-snug text-[#191919]">
                     {value.description}
                   </p>
                 </div>

@@ -72,7 +72,7 @@ export function Platform() {
                   <p className="font-mono text-base md:text-xl tracking-tight leading-tight text-accent">
                     {cap.title}
                   </p>
-                  <p className="text-sm md:text-xl leading-normal text-black max-w-full md:max-w-[75%]">
+                  <p className="text-sm md:text-xl leading-normal text-[#191919] max-w-full md:max-w-[75%]">
                     {cap.description}
                   </p>
                 </div>
