@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { JsonLd } from "@/components/json-ld";
+import { FadeUp } from "@/components/fade-up";
 
 export const metadata: Metadata = {
   title: "Company",
@@ -107,46 +108,53 @@ export default function CompanyPage() {
       {/* Hero */}
       <section className="pt-16 md:pt-32 px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
-          <div className="flex flex-col gap-2">
-            <p className="text-lg md:text-[20px] leading-none tracking-tight text-foreground">
-              Built by Practitioners, for Practitioners
-            </p>
-            <p className="text-sm md:text-lg leading-snug text-muted w-full md:w-1/2 tracking-tight">
-              We&apos;ve spent decades managing compliance and risk at Fortune 500
-              companies.
-            </p>
-          </div>
-          <div className="mt-16">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-accent text-white h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-[#0090E0]"
-            >
-              Contact us
-            </Link>
-          </div>
+          <FadeUp>
+            <div className="flex flex-col gap-2">
+              <p className="text-lg md:text-[20px] leading-none tracking-tight text-foreground">
+                Built by Practitioners, for Practitioners
+              </p>
+              <p className="text-sm md:text-lg leading-snug text-muted w-full md:w-1/2 tracking-tight">
+                We&apos;ve spent decades managing compliance and risk at Fortune 500
+                companies.
+              </p>
+            </div>
+          </FadeUp>
+          <FadeUp delay={100}>
+            <div className="mt-16">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center bg-accent text-white h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-[#0090E0]"
+              >
+                Contact us
+              </Link>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* Why we exist */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
-          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight">
-            Why we exist
-          </h2>
+          <FadeUp>
+            <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight">
+              Why we exist
+            </h2>
+          </FadeUp>
 
-          <div className="grid md:grid-cols-3 gap-1">
-            {STATS.map((stat) => (
-              <div
-                key={stat.value}
-                className="bg-surface rounded-md min-h-[191px] p-6 md:p-10 flex flex-col justify-between gap-6"
-              >
-                <p className="text-3xl md:text-[4rem] tracking-tighter leading-tight text-accent">
-                  {stat.value}
-                </p>
-                <p className="text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
-                  {stat.label}
-                </p>
-              </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {STATS.map((stat, i) => (
+              <FadeUp key={stat.value} delay={i * 80}>
+                <div
+                  className="bg-accent shadow-2xl min-h-[191px] p-6 md:p-10 flex flex-col justify-between gap-6"
+                >
+                  <p className="text-3xl md:text-[4rem] tracking-tighter leading-tight text-white">
+                    {stat.value}
+                  </p>
+                  <p className="text-sm md:text-xl leading-snug text-white/50 max-w-full md:max-w-[75%]">
+                    {stat.label}
+                  </p>
+                </div>
+              </FadeUp>
             ))}
           </div>
         </div>
@@ -155,23 +163,26 @@ export default function CompanyPage() {
       {/* Our approach */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-8 items-center">
-          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
-            Our approach
-          </h2>
+          <FadeUp>
+            <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
+              Our approach
+            </h2>
+          </FadeUp>
 
-          <div className="w-full grid md:grid-cols-2 gap-1">
-            {APPROACH.map((item) => (
-              <div
-                key={item.title}
-                className="bg-surface rounded-md min-h-[178px] p-6 md:p-10"
-              >
-                <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
-                  {item.title}
-                </p>
-                <p className="mt-1 text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
-                  {item.description}
-                </p>
-              </div>
+          <div className="w-full grid md:grid-cols-2 gap-6">
+            {APPROACH.map((item, i) => (
+              <FadeUp key={item.title} delay={i * 60}>
+                <div
+                  className="bg-[#F3F3F3] shadow-2xl min-h-[178px] p-6 md:p-10 flex flex-col gap-2"
+                >
+                  <p className="text-base md:text-xl tracking-tight leading-tight font-mono text-accent">
+                    {item.title}
+                  </p>
+                  <p className="text-sm md:text-xl leading-snug text-black max-w-full md:max-w-[75%]">
+                    {item.description}
+                  </p>
+                </div>
+              </FadeUp>
             ))}
           </div>
         </div>
@@ -180,101 +191,106 @@ export default function CompanyPage() {
       {/* Open letter */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
-          <div className="bg-surface rounded-md p-6 md:p-16 lg:p-40 flex flex-col gap-10 md:gap-20">
-            <h2 className="text-lg md:text-[2rem] tracking-tight leading-snug">
-              An open letter to CISOs,
-              <br />
-              CROs, and Risk Professionals
-            </h2>
+          <FadeUp>
+            <div className="bg-accent shadow-2xl p-6 md:p-16 lg:p-40 flex flex-col gap-10 md:gap-20">
+              <h2 className="text-lg md:text-[2rem] tracking-tight leading-snug text-white">
+                An open letter to CISOs,
+                <br />
+                CROs, and Risk Professionals
+              </h2>
 
-            <div className="text-base md:text-[2rem] tracking-tight leading-snug text-muted space-y-6 md:space-y-8">
-              <p>
-                Over my career&mdash;from leading cybersecurity at Barclays and
-                Bank of America, to serving as the first Chief Trust Officer at
-                SAP&mdash;I&apos;ve seen firsthand how trust is built, broken,
-                and rebuilt in complex organizations.
-              </p>
-              <p>
-                Today, companies grapple with sprawling supply chains and
-                evolving cyber risks. Manual assessments are slow, siloed, and
-                often outdated.
-              </p>
-              <p>
-                TrustGuard is designed to change that: an AI-first platform that
-                helps you continuously assess, collaborate, and close compliance
-                gaps&mdash;all within a single, interactive workflow.
-              </p>
-              <p className="text-foreground">
-                We built TrustGuard with two core principles in mind:
-              </p>
-              <ol className="list-decimal pl-6 md:pl-12 space-y-4 text-foreground marker:text-foreground">
-                <li>
-                  <span className="text-foreground">
-                    Transparency at scale
-                  </span>{" "}
-                  <span className="text-muted">
-                    &mdash; from the dashboard to evidence sharing, nothing is
-                    hidden. You&apos;ll see compliance status clearly, at every
-                    vendor and control level.
-                  </span>
-                </li>
-                <li>
-                  <span className="text-foreground">
-                    Actionable momentum
-                  </span>{" "}
-                  <span className="text-muted">
-                    &mdash; it&apos;s not enough to show risk, we help you move
-                    on it. With proactive triage, reminders, and AI-driven
-                    insights, progress becomes visible and measurable.
-                  </span>
-                </li>
-              </ol>
-              <p>
-                As an adjunct professor at Cornell, I teach the next generation
-                of security leaders. They remind me every day that cybersecurity
-                and trust are dynamic processes&mdash;not checklists.
-              </p>
-              <p>
-                That&apos;s why we built TrustGuard: to make trust operational
-                and clear, not theoretical.
-              </p>
-              <p>
-                If you&apos;re responsible for managing third-party risk, I
-                invite you to explore how TrustGuard can support your mission.
-                Together, we can turn compliance into confidence.
-              </p>
-              <p>Sincerely,</p>
-            </div>
+              <div className="text-base md:text-[2rem] tracking-tight leading-snug text-white/50 space-y-6 md:space-y-8">
+                <p>
+                  Over my career&mdash;from leading cybersecurity at Barclays and
+                  Bank of America, to serving as the first Chief Trust Officer at
+                  SAP&mdash;I&apos;ve seen firsthand how trust is built, broken,
+                  and rebuilt in complex organizations.
+                </p>
+                <p>
+                  Today, companies grapple with sprawling supply chains and
+                  evolving cyber risks. Manual assessments are slow, siloed, and
+                  often outdated.
+                </p>
+                <p>
+                  TrustGuard is designed to change that: an AI-first platform that
+                  helps you continuously assess, collaborate, and close compliance
+                  gaps&mdash;all within a single, interactive workflow.
+                </p>
+                <p className="text-white">
+                  We built TrustGuard with two core principles in mind:
+                </p>
+                <ol className="list-decimal pl-6 md:pl-12 space-y-4 text-white marker:text-white">
+                  <li>
+                    <span className="text-white">
+                      Transparency at scale
+                    </span>{" "}
+                    <span className="text-white/50">
+                      &mdash; from the dashboard to evidence sharing, nothing is
+                      hidden. You&apos;ll see compliance status clearly, at every
+                      vendor and control level.
+                    </span>
+                  </li>
+                  <li>
+                    <span className="text-white">
+                      Actionable momentum
+                    </span>{" "}
+                    <span className="text-white/50">
+                      &mdash; it&apos;s not enough to show risk, we help you move
+                      on it. With proactive triage, reminders, and AI-driven
+                      insights, progress becomes visible and measurable.
+                    </span>
+                  </li>
+                </ol>
+                <p>
+                  As an adjunct professor at Cornell, I teach the next generation
+                  of security leaders. They remind me every day that cybersecurity
+                  and trust are dynamic processes&mdash;not checklists.
+                </p>
+                <p>
+                  That&apos;s why we built TrustGuard: to make trust operational
+                  and clear, not theoretical.
+                </p>
+                <p>
+                  If you&apos;re responsible for managing third-party risk, I
+                  invite you to explore how TrustGuard can support your mission.
+                  Together, we can turn compliance into confidence.
+                </p>
+                <p>Sincerely,</p>
+              </div>
 
-            <div className="flex items-start gap-6">
-              <Image
-                src="/assets/elena-kvochko.jpeg"
-                alt="Elena Kvochko"
-                width={48}
-                height={48}
-                className="shrink-0 size-12 rounded-sm object-cover"
-              />
-              <div className="flex flex-col items-start gap-1">
-                <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
-                  Elena K.
-                </p>
-                <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
-                  Founder &amp; CEO
-                </p>
+              <div className="flex items-start gap-6">
+                <Image
+                  src="/assets/elena-kvochko.jpeg"
+                  alt="Elena Kvochko"
+                  width={48}
+                  height={48}
+                  className="shrink-0 size-12 rounded-sm object-cover"
+                />
+                <div className="flex flex-col items-start gap-1">
+                  <p className="text-base md:text-xl tracking-tight leading-tight text-white">
+                    Elena K.
+                  </p>
+                  <p className="text-sm md:text-xl tracking-tight leading-tight text-white/50">
+                    Founder &amp; CEO
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* Founder */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
-          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
-            Founder
-          </h2>
+          <FadeUp>
+            <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
+              Founder
+            </h2>
+          </FadeUp>
 
-          <div className="bg-surface rounded-md p-6 md:p-10 flex flex-col gap-10">
+          <FadeUp delay={80}>
+            <div className="bg-[#F3F3F3] shadow-2xl p-6 md:p-10 flex flex-col gap-10">
             <div className="flex items-start gap-6">
               <Image
                 src={FOUNDER.photo}
@@ -295,23 +311,26 @@ export default function CompanyPage() {
             <p className="text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
               {FOUNDER.bio}
             </p>
-          </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* Investors */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
-          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
-            Investors
-          </h2>
+          <FadeUp>
+            <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
+              Investors
+            </h2>
+          </FadeUp>
 
-          <div className="grid md:grid-cols-2 gap-1">
-            {INVESTORS.map((investor) => (
-              <div
-                key={investor.name}
-                className="bg-surface rounded-md p-6 md:p-10 flex flex-col gap-10"
-              >
+          <div className="grid md:grid-cols-2 gap-6">
+            {INVESTORS.map((investor, i) => (
+              <FadeUp key={investor.name} delay={i * 60}>
+                <div
+                  className="bg-[#F3F3F3] shadow-2xl p-6 md:p-10 flex flex-col gap-10"
+                >
                 <div className="flex items-start gap-6">
                   <Image
                     src={investor.photo}
@@ -334,7 +353,8 @@ export default function CompanyPage() {
                     {investor.bio}
                   </p>
                 )}
-              </div>
+                </div>
+              </FadeUp>
             ))}
           </div>
         </div>

@@ -9,7 +9,7 @@ export function Hero() {
     <section className="relative min-h-[700px] md:min-h-[904px] overflow-hidden bg-white">
       <div className="absolute inset-x-0 bottom-0 h-[60%] pointer-events-none">
         <Dithering
-          speed={0.52}
+          speed={0.26}
           shape="wave"
           type="random"
           size={11}
@@ -38,7 +38,11 @@ export function Hero() {
         >
           <div className="bg-[#318FFA] p-8 md:p-[40px] w-full shadow-[10px_12px_34px_0px_rgba(0,0,0,0.08),42px_46px_62px_0px_rgba(0,0,0,0.07),94px_104px_84px_0px_rgba(0,0,0,0.04)]">
             <p className="font-mono text-white text-base md:text-[24px] leading-[1.5] tracking-[-0.04em]">
-              Assess vendors, audit controls, and evaluate your compliance posture — one engine, any framework.
+              Assess vendors, audit controls,
+              <br className="hidden md:block" />
+              and evaluate your compliance posture —
+              <br className="hidden md:block" />
+              one engine, any framework.
             </p>
           </div>
           <Link

@@ -45,11 +45,11 @@ export function Platform() {
         <div className="w-full grid md:grid-cols-2 md:auto-rows-[1fr] gap-6">
           {CAPABILITIES.map((cap, i) => (
             <FadeUp key={cap.title} delay={i * 60} className="h-full">
-              <div className="bg-accent shadow-2xl h-full p-6 md:p-10">
-                <p className="text-base md:text-xl tracking-tight leading-tight text-white">
+              <div className="bg-[#F3F3F3] shadow-2xl h-full p-6 md:p-10 flex flex-col gap-2">
+                <p className="font-mono text-base md:text-xl tracking-tight leading-tight text-accent">
                   {cap.title}
                 </p>
-                <p className="text-sm md:text-xl leading-snug text-white/50 max-w-full md:max-w-[75%]">
+                <p className="text-sm md:text-xl leading-snug text-black max-w-full md:max-w-[75%]">
                   {cap.description}
                 </p>
               </div>
