@@ -32,12 +32,12 @@ const APPROACH = [
   {
     title: "Every page, every claim",
     description:
-      "AI that reads every page of every SOC report and cross-references claims against evidence. It surfaces what actually matters\u2014not just what\u2019s easy to find.",
+      "Cross-references claims against evidence across every document. Surfaces what matters.",
   },
   {
     title: "Findings you can cite",
     description:
-      "Every finding comes with evidence citations. Know exactly why something is flagged, with direct links to the source documentation.",
+      "Every finding comes with evidence citations and direct links to source documentation. Know exactly why something is flagged.",
   },
   {
     title: "90% faster, same rigor",
@@ -47,7 +47,7 @@ const APPROACH = [
   {
     title: "Practitioner-built",
     description:
-      "Designed by CISOs and risk managers who\u2019ve run thousands of assessments. Every feature exists because we needed it ourselves.",
+      "Built by CISOs and risk managers who\u2019ve run thousands of assessments. Every feature exists because we needed it.",
   },
 ] as const;
 
@@ -186,7 +186,7 @@ export default function CompanyPage() {
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
           <FadeUp>
-            <div className="bg-accent shadow-2xl p-6 md:p-16 lg:p-60 flex flex-col gap-10 md:gap-20">
+            <div className="bg-accent shadow-2xl p-6 md:p-16 lg:px-60 lg:py-40 flex flex-col gap-10 md:gap-20">
               <Image
                 src="/assets/tg-logo.svg"
                 alt="TrustGuard AI"
@@ -288,13 +288,13 @@ export default function CompanyPage() {
           <div className="grid md:grid-cols-2 gap-6">
             <FadeUp delay={60}>
               <div className="bg-background shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
-                <div className="flex items-start gap-6">
+                <div className="flex items-center gap-6">
                   <Image
                     src={FOUNDER.photo}
                     alt={FOUNDER.name}
                     width={48}
                     height={48}
-                    className="shrink-0 size-12 rounded-sm object-cover"
+                    className="shrink-0 size-12 object-cover"
                   />
                   <div className="flex flex-col items-start gap-1">
                     <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
@@ -314,13 +314,13 @@ export default function CompanyPage() {
             {INVESTORS.map((investor, i) => (
               <FadeUp key={investor.name} delay={(i + 1) * 60 + 60}>
                 <div className="bg-background shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
-                  <div className="flex items-start gap-6">
+                  <div className="flex items-center gap-6">
                     <Image
                       src={investor.photo}
                       alt={investor.name}
                       width={48}
                       height={48}
-                      className="shrink-0 size-12 rounded-sm object-cover"
+                      className="shrink-0 size-12 object-cover"
                     />
                     <div className="flex flex-col items-start gap-1">
                       <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
