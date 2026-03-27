@@ -11,24 +11,29 @@ export const metadata: Metadata = {
 
 const VALUES = [
   {
-    title: "Transparency at scale",
+    title: "Built for scale",
     description:
-      "We believe in clear communication, honest feedback, and visible progress\u2014internally and with customers.",
+      "Architecture designed to process thousands of assessments without compromising depth or accuracy.",
   },
   {
-    title: "Actionable momentum",
+    title: "Precision and elegance",
     description:
-      "It\u2019s not enough to identify problems. We move on them. Progress is visible and measurable.",
+      "Every interaction is intentional. Clean outputs, clear findings, no noise.",
+  },
+  {
+    title: "Surface what manual reviews can't",
+    description:
+      "AI that reads every page and cross-references claims across documents — gaps that humans miss become visible.",
+  },
+  {
+    title: "Continuous deep monitoring",
+    description:
+      "Ongoing assessment of your compliance posture — not a point-in-time snapshot.",
   },
   {
     title: "Operator mentality",
     description:
       "We build for people who do the work. Every feature comes from understanding real operational pressure.",
-  },
-  {
-    title: "Trust as a process",
-    description:
-      "Cybersecurity and trust are dynamic\u2014not checklists. We embrace continuous learning and adaptation.",
   },
 ] as const;
 
@@ -65,7 +70,7 @@ export default function CareersPage() {
             </h2>
           </FadeUp>
 
-          <div className="w-full grid md:grid-cols-2 gap-6">
+          <div className="w-full grid md:grid-cols-3 gap-6">
             {VALUES.map((value, i) => (
               <FadeUp key={value.title} delay={i * 60}>
                 <div
@@ -104,13 +109,10 @@ export default function CareersPage() {
                 to auditors.
               </p>
               <p>
-                Founded by security veterans who&apos;ve led trust and security
-                at scale&mdash;from Barclays and Bank of America to
-                SAP&mdash;we understand the problem from the inside.
+                Founded by security and engineering veterans from SAP, Bank of America, Barclays, AWS, and Microsoft.
               </p>
               <p>
-                We&apos;re looking for people who want to solve real operational
-                problems, not chase hype.
+                We look for people with deep security and engineering expertise.
               </p>
               </div>
             </div>

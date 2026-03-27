@@ -5,7 +5,6 @@ import {
   JiraLogo,
   GooglecloudLogo,
   OktaLogo,
-  SlackwareLogo,
   SplunkLogo,
   Lcn1passwordLogo,
   ConfluenceLogo,
@@ -15,42 +14,50 @@ import {
   NotionLogo,
   PagerdutyLogo,
   QualysLogo,
+  AwsLogo,
+  SlackLogo,
+  SnowflakeLogo,
+  TerraformLogo,
+  SalesforceLogo,
+  SnykLogo,
+  ElasticLogo,
+  CloudflareLogo,
+  MongodbLogo,
+  AzureLogo,
+  GrafanaLogo,
 } from "@/components/logos";
 
 const ROWS: { name: string; Logo: ComponentType<LogoProps> }[][] = [
   [
-    { name: "Jira", Logo: JiraLogo },
-    { name: "Google Cloud", Logo: GooglecloudLogo },
+    { name: "AWS", Logo: AwsLogo },
     { name: "Okta", Logo: OktaLogo },
-    { name: "Datadog", Logo: DatadogLogo },
-    { name: "Docker", Logo: DockerLogo },
     { name: "GitHub", Logo: GithubLogo },
-    { name: "Splunk", Logo: SplunkLogo },
-  ],
-  [
-    { name: "Confluence", Logo: ConfluenceLogo },
-    { name: "PagerDuty", Logo: PagerdutyLogo },
-    { name: "Notion", Logo: NotionLogo },
-    { name: "1Password", Logo: Lcn1passwordLogo },
+    { name: "Salesforce", Logo: SalesforceLogo },
+    { name: "Snowflake", Logo: SnowflakeLogo },
     { name: "Qualys", Logo: QualysLogo },
-    { name: "Slackware", Logo: SlackwareLogo },
   ],
   [
-    { name: "Docker", Logo: DockerLogo },
-    { name: "Okta", Logo: OktaLogo },
-    { name: "Splunk", Logo: SplunkLogo },
-    { name: "GitHub", Logo: GithubLogo },
-    { name: "Google Cloud", Logo: GooglecloudLogo },
-    { name: "PagerDuty", Logo: PagerdutyLogo },
+    { name: "Slack", Logo: SlackLogo },
     { name: "Jira", Logo: JiraLogo },
+    { name: "Datadog", Logo: DatadogLogo },
+    { name: "Terraform", Logo: TerraformLogo },
+    { name: "Elastic", Logo: ElasticLogo },
+    { name: "Snyk", Logo: SnykLogo },
   ],
   [
-    { name: "Qualys", Logo: QualysLogo },
-    { name: "Notion", Logo: NotionLogo },
-    { name: "Datadog", Logo: DatadogLogo },
-    { name: "1Password", Logo: Lcn1passwordLogo },
+    { name: "Google Cloud", Logo: GooglecloudLogo },
+    { name: "Docker", Logo: DockerLogo },
     { name: "Confluence", Logo: ConfluenceLogo },
-    { name: "Slackware", Logo: SlackwareLogo },
+    { name: "MongoDB", Logo: MongodbLogo },
+    { name: "PagerDuty", Logo: PagerdutyLogo },
+    { name: "Azure", Logo: AzureLogo },
+  ],
+  [
+    { name: "1Password", Logo: Lcn1passwordLogo },
+    { name: "Notion", Logo: NotionLogo },
+    { name: "Splunk", Logo: SplunkLogo },
+    { name: "Cloudflare", Logo: CloudflareLogo },
+    { name: "Grafana", Logo: GrafanaLogo },
   ],
 ];
 
@@ -91,12 +98,12 @@ export function Integrations() {
                   {[...row, ...row].map((item, i) => (
                     <div
                       key={`${item.name}-${rowIndex}-${i}`}
-                      className="w-28 h-14 md:w-40 md:h-20 shrink-0 bg-white/5 flex items-center justify-center"
+                      className="w-28 h-14 md:w-40 md:h-20 shrink-0 bg-white/5 flex items-center justify-center gap-2"
                     >
-                      <item.Logo
-                        color="currentColor"
-                        className="h-6 md:h-8 w-auto text-white/50"
-                      />
+                      <item.Logo className="h-5 md:h-6 w-auto shrink-0" />
+                      <span className="text-[10px] md:text-xs text-white/60 tracking-tight leading-tight">
+                        {item.name}
+                      </span>
                     </div>
                   ))}
                 </div>

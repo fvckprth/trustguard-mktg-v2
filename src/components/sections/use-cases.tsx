@@ -5,7 +5,7 @@ import { FadeUp } from "@/components/fade-up";
 
 const CASES = [
   {
-    title: "Third-party risk assessments",
+    title: "Third-party risk management",
     description:
       "Assess vendors against your frameworks. Get findings with evidence citations and track remediation to closure.",
   },

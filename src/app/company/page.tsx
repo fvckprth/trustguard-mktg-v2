@@ -55,7 +55,7 @@ const FOUNDER = {
   name: "Elena Kvochko",
   role: "Founder & CEO",
   photo: "/assets/elena-kvochko.jpeg",
-  bio: "Building an AI-first platform to transform third-party risk. Adjunct professor at Cornell. Previously CISO at SAP, led cybersecurity at Barclays and Bank of America.",
+  bio: "Building an AI-first platform to transform third-party risk. Previously CISO at SAP, led cybersecurity at Barclays and Bank of America.",
 } as const;
 
 const INVESTORS = [
@@ -88,7 +88,7 @@ const companySchema = {
     name: "Elena Kvochko",
     jobTitle: "Founder & CEO",
     description:
-      "Adjunct professor at Cornell. Previously CISO at SAP, led cybersecurity at Barclays and Bank of America.",
+      "Previously CISO at SAP, led cybersecurity at Barclays and Bank of America.",
   },
   employee: [
     {
@@ -241,11 +241,6 @@ export default function CompanyPage() {
                     </span>
                   </li>
                 </ol>
-                <p>
-                  As an adjunct professor at Cornell, I teach the next generation
-                  of security leaders. They remind me every day that cybersecurity
-                  and trust are dynamic processes&mdash;not checklists.
-                </p>
                 <p>
                   That&apos;s why we built TrustGuard: to make trust operational
                   and clear, not theoretical.

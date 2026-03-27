@@ -30,7 +30,7 @@ export function Hero() {
             <br />
             Precision and Elegance for
             <br />
-            Every Risk Assessment.
+            Every Security Risk Assessment.
           </h1>
         </FadeUp>
 
@@ -40,11 +40,9 @@ export function Hero() {
         >
           <div className="bg-[#1E3A8A] p-8 md:p-[40px] w-full shadow-[10px_12px_34px_0px_rgba(0,0,0,0.08),42px_46px_62px_0px_rgba(0,0,0,0.07),94px_104px_84px_0px_rgba(0,0,0,0.04)]">
             <p className="font-mono text-white text-base md:text-[24px] leading-[1.5] tracking-[-0.04em]">
-              Vendor risk. Internal audits.
-              <br className="hidden md:block" />
-              Compliance programs.
-              <br className="hidden md:block" />
-              One agentic platform, any framework.
+              <span className="md:block">Vendor risk. Internal audits.</span>{" "}
+              <span className="md:block">Compliance programs.</span>{" "}
+              <span className="md:block">One agentic platform, any framework.</span>
             </p>
           </div>
           <Link

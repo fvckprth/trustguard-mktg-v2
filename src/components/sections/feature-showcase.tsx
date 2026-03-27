@@ -19,7 +19,7 @@ const FEATURES: Feature[] = [
     label: "Analysis",
     title: "Analyze evidence",
     description:
-      "Surface missing proof and inconsistencies before reviews stall.",
+      "Surface missing proof and inconsistencies across your evidence set.",
     span: 8,
     Illustration: AnalyzeEvidenceIllustration,
   },
@@ -27,7 +27,7 @@ const FEATURES: Feature[] = [
     label: "Frameworks",
     title: "Map to any framework",
     description:
-      "SOC 2, ISO 27001, FedRAMP, NIST, SIG, CAIQ — or define your own.",
+      "SOC 2, ISO 27001, FedRAMP, NIST, SIG, CAIQ.",
     span: 4,
     Illustration: CentralizeEvidenceIllustration,
   },
@@ -35,7 +35,7 @@ const FEATURES: Feature[] = [
     label: "Remediation",
     title: "Track remediation to closure",
     description:
-      "Follow every finding from gap to fix. Reassess with evidence.",
+      "Follow every finding from gap to fix.",
     span: 4,
     Illustration: VendorRiskRecordIllustration,
   },
