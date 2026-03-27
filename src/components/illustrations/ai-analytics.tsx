@@ -46,7 +46,6 @@ export function AIAnalyticsIllustration() {
                 fill="none"
                 stroke={arc.color}
                 strokeWidth="12"
-                strokeLinecap="round"
                 strokeDasharray={arc.dashArray}
                 strokeDashoffset={arc.dashOffset}
                 transform="rotate(-90 65 65)"

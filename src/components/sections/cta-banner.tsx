@@ -1,21 +1,30 @@
 import Link from "next/link";
-import { Dithering } from "@paper-design/shaders-react";
+import { GodRays } from "@paper-design/shaders-react";
 import { FadeUp } from "@/components/fade-up";
 
 export function CtaBanner() {
   return (
     <section className="relative overflow-hidden px-6 md:px-10 py-20 md:py-40">
-      {/* Dither — bottom-anchored, blends into footer */}
-      <div className="absolute inset-x-0 bottom-0 h-[70%] pointer-events-none">
-        <Dithering
-          speed={0}
-          shape="wave"
-          type="random"
-          size={11}
-          scale={1}
-          colorFront="#ECEAE5"
+      {/* GodRays — beams going up, fades into footer */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ maskImage: "linear-gradient(to top, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to top, black 60%, transparent 100%)" }}
+      >
+        <GodRays
+          offsetX={-0.34}
+          offsetY={0.85}
+          intensity={0.79}
+          spotty={1}
+          midSize={0}
+          midIntensity={0.59}
+          density={0.41}
+          bloom={1}
+          speed={1.55}
+          scale={4}
           colorBack="#00000000"
-          style={{ width: "100%", height: "100%", backgroundColor: "#F8F5F0" }}
+          colors={["#ECEAE5"]}
+          colorBloom="#ECEAE5"
+          style={{ width: "100%", height: "100%" }}
         />
       </div>
 

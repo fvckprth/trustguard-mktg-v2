@@ -21,9 +21,9 @@ const VALUES = [
       "Every interaction is intentional. Clean outputs, clear findings, no noise.",
   },
   {
-    title: "Surface what manual reviews can't",
+    title: "Operator mentality",
     description:
-      "AI that reads every page and cross-references claims across documents — gaps that humans miss become visible.",
+      "We build for people who do the work. Every feature comes from understanding real operational pressure.",
   },
   {
     title: "Continuous deep monitoring",
@@ -31,9 +31,9 @@ const VALUES = [
       "Ongoing assessment of your compliance posture — not a point-in-time snapshot.",
   },
   {
-    title: "Operator mentality",
+    title: "Surface what manual reviews can't",
     description:
-      "We build for people who do the work. Every feature comes from understanding real operational pressure.",
+      "AI that reads every page and cross-references claims across documents — gaps that humans miss become visible.",
   },
 ] as const;
 
@@ -42,21 +42,21 @@ export default function CareersPage() {
     <div className="flex flex-col gap-20 md:gap-40">
       {/* Hero */}
       <section className="pt-16 md:pt-32 px-6 md:px-10">
-        <div className="max-w-[1280px] mx-auto">
+        <div className="max-w-[1280px] mx-auto flex flex-col items-center">
           <FadeUp>
-            <h1 className="text-lg md:text-[2rem] tracking-tight leading-tight">
-              Help us shape the future of compliance assessment
+            <h1 className="text-[40px] md:text-[64px] leading-tight tracking-tight text-foreground text-center">
+              Shape the Future of
+              <br />
+              Compliance Assessment
             </h1>
           </FadeUp>
           <FadeUp delay={100}>
-            <div className="mt-16">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center bg-accent text-white h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-[#152E6B]"
-              >
-                Contact us
-              </Link>
-            </div>
+            <Link
+              href="/request-demo"
+              className="mt-16 font-mono bg-[#191919] text-white h-14 md:h-[64px] px-8 md:px-[40px] inline-flex items-center justify-center text-base md:text-[24px] tracking-[-0.04em] shadow-[2px_2px_7px_0px_rgba(0,0,0,0.08),8px_9px_13px_0px_rgba(0,0,0,0.07)] hover:bg-background hover:text-accent transition-colors"
+            >
+              Contact us
+            </Link>
           </FadeUp>
         </div>
       </section>
@@ -70,11 +70,15 @@ export default function CareersPage() {
             </h2>
           </FadeUp>
 
-          <div className="w-full grid md:grid-cols-3 gap-6">
+          <div className="w-full grid md:grid-cols-6 md:auto-rows-[1fr] gap-6">
             {VALUES.map((value, i) => (
-              <FadeUp key={value.title} delay={i * 60}>
+              <FadeUp
+                key={value.title}
+                delay={i * 60}
+                className={`h-full ${i < 3 ? "md:col-span-2" : "md:col-span-3"}`}
+              >
                 <div
-                  className="bg-background shadow-2xl min-h-[151px] p-6 md:p-10 flex flex-col gap-2"
+                  className="bg-background shadow-2xl h-full p-6 md:p-10 flex flex-col gap-2"
                 >
                   <p className="text-base md:text-xl tracking-tight leading-tight font-mono text-accent">
                     {value.title}
@@ -93,12 +97,12 @@ export default function CareersPage() {
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
           <FadeUp>
-            <div className="bg-accent shadow-2xl px-6 py-16 md:px-60 md:py-40 flex flex-col gap-10 md:gap-20">
-              <h2 className="text-lg md:text-[2rem] tracking-tight leading-snug text-white">
+            <div className="bg-[#191919] shadow-2xl p-6 md:p-16 lg:px-60 lg:py-20 flex flex-col gap-10 md:gap-20">
+              <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-white">
                 Why join us
               </h2>
 
-              <div className="text-base md:text-[2rem] tracking-tight leading-snug text-white/50 space-y-6 md:space-y-8">
+              <div className="text-base md:text-[24px] tracking-tight leading-snug text-white/50 space-y-6 md:space-y-8">
               <p>
                 We&apos;re building an AI-first platform that turns compliance
                 into confidence for organizations managing complex risk
@@ -126,14 +130,14 @@ export default function CareersPage() {
           <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row md:items-center gap-8">
             <div className="flex-1 flex flex-col gap-1 text-lg md:text-[2rem] tracking-tight">
               <p className="leading-tight text-foreground">Open positions</p>
-              <p className="leading-snug text-muted w-full md:w-1/2">
+              <p className="leading-snug text-muted w-full md:w-2/3">
                 We&apos;re always looking for exceptional people. Even if you
                 don&apos;t see a role that fits, we&apos;d love to hear from you.
               </p>
             </div>
             <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center justify-center bg-accent text-white h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-[#152E6B]"
+              href="/request-demo"
+              className="shrink-0 font-mono bg-[#191919] text-white h-14 md:h-[64px] px-8 md:px-[40px] inline-flex items-center justify-center text-base md:text-[24px] tracking-[-0.04em] shadow-[2px_2px_7px_0px_rgba(0,0,0,0.08),8px_9px_13px_0px_rgba(0,0,0,0.07)] hover:bg-background hover:text-accent transition-colors"
             >
               Contact us
             </Link>

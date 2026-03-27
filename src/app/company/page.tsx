@@ -40,7 +40,7 @@ const APPROACH = [
       "Every finding comes with evidence citations and direct links to source documentation. Know exactly why something is flagged.",
   },
   {
-    title: "90% faster, same rigor",
+    title: "90% faster, more precise",
     description:
       "Process hundreds of documents in the time it takes to review one manually. Assessment speed scales with your portfolio.",
   },
@@ -163,16 +163,20 @@ export default function CompanyPage() {
             </h2>
           </FadeUp>
 
-          <div className="w-full grid md:grid-cols-2 gap-6">
+          <div className="w-full grid md:grid-cols-6 md:auto-rows-[1fr] gap-6">
             {APPROACH.map((item, i) => (
-              <FadeUp key={item.title} delay={i * 60}>
+              <FadeUp
+                key={item.title}
+                delay={i * 60}
+                className="h-full md:col-span-3"
+              >
                 <div
-                  className="bg-background shadow-2xl min-h-[178px] p-6 md:p-10 flex flex-col gap-2"
+                  className="bg-background shadow-2xl h-full p-6 md:p-10 flex flex-col gap-2"
                 >
                   <p className="text-base md:text-xl tracking-tight leading-tight font-mono text-accent">
                     {item.title}
                   </p>
-                  <p className="text-sm md:text-xl leading-snug text-[#191919] max-w-full md:max-w-[75%]">
+                  <p className="text-sm md:text-xl leading-snug text-[#191919]">
                     {item.description}
                   </p>
                 </div>
@@ -254,7 +258,7 @@ export default function CompanyPage() {
                 <p>Sincerely,</p>
               </div>
 
-              <div className="flex items-start gap-6">
+              <div className="flex items-center gap-6">
                 <Image
                   src="/assets/elena-kvochko.jpeg"
                   alt="Elena Kvochko"
@@ -264,7 +268,7 @@ export default function CompanyPage() {
                 />
                 <div className="flex flex-col items-start gap-1">
                   <p className="text-base md:text-xl tracking-tight leading-tight text-white">
-                    Elena K.
+                    Elena Kvochko
                   </p>
                   <p className="text-sm md:text-xl tracking-tight leading-tight text-white/50">
                     Founder &amp; CEO

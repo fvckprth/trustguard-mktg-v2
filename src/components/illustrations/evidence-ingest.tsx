@@ -47,7 +47,6 @@ export function EvidenceIngestIllustration() {
               fill="none"
               stroke={COLOR.accent}
               strokeWidth="3"
-              strokeLinecap="round"
               strokeDasharray={RING_C}
               strokeDashoffset={RING_OFFSET}
               transform="rotate(-90 14 14)"
