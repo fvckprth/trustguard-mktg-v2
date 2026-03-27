@@ -6,7 +6,7 @@ interface IllustrationFadeFrameProps {
 
 export function IllustrationFadeFrame({ children }: IllustrationFadeFrameProps) {
   return (
-    <div className="relative h-full min-h-0 w-full overflow-hidden rounded-md bg-foreground/5">
+    <div className="relative h-full min-h-0 w-full overflow-hidden">
       <div className="flex h-full min-h-0 flex-col pt-10 md:pt-12">
         <div className="relative min-h-0 flex-1">
           <div

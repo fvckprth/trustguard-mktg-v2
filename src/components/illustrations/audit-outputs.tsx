@@ -32,14 +32,14 @@ export function AuditOutputsIllustration() {
     <div className="size-full min-h-0 select-none flex items-start justify-center px-5 pb-5">
       <div className="w-full max-w-[280px] flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <span className="text-xs md:text-sm leading-tight tracking-tight" style={{ color: COLOR.dim }}>
+          <span className="font-mono text-xs md:text-sm leading-tight tracking-tight" style={{ color: COLOR.dim }}>
             3 reports generated
           </span>
           <div className="flex gap-1.5 h-4">
             {REPORTS.map((r) => (
               <div
                 key={r.name}
-                className="h-full rounded-sm flex-1"
+                className="h-full flex-1"
                 style={{ width: r.barWidth, background: r.primary ? COLOR.accent : COLOR.muted }}
               />
             ))}
@@ -50,7 +50,7 @@ export function AuditOutputsIllustration() {
           {REPORTS.map((report) => (
             <div
               key={report.name}
-              className="rounded-md p-3.5 flex items-center gap-3"
+              className="p-3.5 flex items-center gap-3"
               style={{ background: COLOR.rowBg }}
             >
               <report.Icon
@@ -65,7 +65,7 @@ export function AuditOutputsIllustration() {
                 {report.name}
               </span>
               <span
-                className="text-xs leading-tight tracking-tight whitespace-nowrap px-2 py-1 rounded-sm shrink-0"
+                className="text-xs leading-tight tracking-tight whitespace-nowrap px-2 py-1 shrink-0"
                 style={{
                   background: report.primary ? COLOR.accentDim : COLOR.rowBg,
                   color: report.primary ? COLOR.accent : COLOR.dim,

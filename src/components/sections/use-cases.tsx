@@ -45,10 +45,10 @@ export function UseCases() {
             </h2>
           </FadeUp>
 
-          <div className="w-full grid md:grid-cols-3 gap-6">
+          <div className="w-full grid md:grid-cols-3 md:auto-rows-[1fr] gap-6">
             {CASES.map((item, i) => (
-              <FadeUp key={item.title} delay={i * 80}>
-                <div className="bg-[#191919] shadow-2xl min-h-[178px] h-auto p-6 md:p-10">
+              <FadeUp key={item.title} delay={i * 80} className="h-full">
+                <div className="bg-[#191919] shadow-2xl h-full p-6 md:p-10">
                   <p className="text-base md:text-xl tracking-tight leading-tight text-white">
                     {item.title}
                   </p>

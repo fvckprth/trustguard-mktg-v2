@@ -73,7 +73,7 @@ export function AIAnalyticsIllustration() {
               <span className="text-xs md:text-sm leading-tight tracking-tight flex-1" style={{ color: COLOR.fg }}>
                 {seg.label}
               </span>
-              <span className="text-xs md:text-sm leading-tight tracking-tight tabular-nums" style={{ color: COLOR.dim }}>
+              <span className="font-mono text-xs md:text-sm leading-tight tracking-tight tabular-nums" style={{ color: COLOR.dim }}>
                 {seg.value}%
               </span>
             </div>

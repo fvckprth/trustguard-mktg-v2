@@ -53,7 +53,7 @@ export function EvidenceIngestIllustration() {
               transform="rotate(-90 14 14)"
             />
           </svg>
-          <span className="text-xs md:text-sm leading-tight tracking-tight" style={{ color: COLOR.dim }}>
+          <span className="font-mono text-xs md:text-sm leading-tight tracking-tight" style={{ color: COLOR.dim }}>
             {DONE_COUNT}/{TOTAL} documents ingested
           </span>
         </div>
@@ -62,7 +62,7 @@ export function EvidenceIngestIllustration() {
           {FILES.map((file) => (
             <div
               key={file.name}
-              className="rounded-md p-3.5 flex items-center gap-3"
+              className="p-3.5 flex items-center gap-3"
               style={{ background: COLOR.rowBg }}
             >
               <file.Icon
@@ -77,7 +77,7 @@ export function EvidenceIngestIllustration() {
                 {file.name}
               </span>
               <span
-                className="text-xs leading-tight tracking-tight whitespace-nowrap px-2 py-1 rounded-sm shrink-0"
+                className="text-xs leading-tight tracking-tight whitespace-nowrap px-2 py-1 shrink-0"
                 style={{
                   background: file.state === "done" ? COLOR.accent : COLOR.rowBg,
                   color: file.state === "done" ? "#fff" : COLOR.dim,

@@ -43,9 +43,9 @@ export function AnalyzeEvidenceIllustration() {
                   {c.covered}%
                 </span>
               </div>
-              <div className="w-full h-3 rounded-sm overflow-hidden flex" style={{ background: COLOR.track }}>
+              <div className="w-full h-3 overflow-hidden flex" style={{ background: COLOR.track }}>
                 <div
-                  className="h-full rounded-sm"
+                  className="h-full"
                   style={{ width: `${c.covered}%`, background: COLOR.accent }}
                 />
               </div>

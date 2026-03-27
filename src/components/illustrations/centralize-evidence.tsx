@@ -33,12 +33,12 @@ export function CentralizeEvidenceIllustration() {
           {VENDORS.map((v) => (
             <div
               key={v.name}
-              className="rounded-md p-3 flex flex-col gap-2"
+              className="p-3 flex flex-col gap-2"
               style={{ background: COLOR.rowBg }}
             >
               <div className="flex items-center gap-2 min-w-0">
                 <div
-                  className="w-6 h-6 rounded-full flex items-center justify-center text-xs leading-none shrink-0"
+                  className="w-6 h-6 flex items-center justify-center text-xs leading-none shrink-0"
                   style={{ background: COLOR.accentDim, color: COLOR.accent }}
                 >
                   {v.initial}
@@ -56,7 +56,7 @@ export function CentralizeEvidenceIllustration() {
                 </span>
                 {v.reusable && (
                   <span
-                    className="text-[10px] leading-tight tracking-tight px-1.5 py-0.5 rounded-sm shrink-0"
+                    className="text-[10px] leading-tight tracking-tight px-1.5 py-0.5 shrink-0"
                     style={{ background: COLOR.accentDim, color: COLOR.accent }}
                   >
                     Reusable
