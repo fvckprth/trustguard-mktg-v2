@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { Dithering } from "@paper-design/shaders-react";
+import { GodRays } from "@paper-design/shaders-react";
 import { FadeUp } from "@/components/fade-up";
 
 export function Mission() {
@@ -7,17 +9,23 @@ export function Mission() {
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto">
         <FadeUp className="relative bg-accent shadow-2xl overflow-hidden flex flex-col md:flex-row items-start justify-between p-8 md:p-40 gap-10 md:gap-16">
-          {/* Dither sphere — bottom-right corner, only quarter visible */}
-          <div className="absolute bottom-0 right-0 translate-x-[45%] translate-y-[45%] w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] pointer-events-none">
-            <Dithering
+          {/* GodRays — warm white beam from bottom-right corner */}
+          <div className="absolute inset-0 pointer-events-none">
+            <GodRays
+              offsetX={0.7}
+              offsetY={0.7}
+              intensity={0.8}
+              spotty={0.3}
+              midSize={0.2}
+              midIntensity={1}
+              density={0.3}
+              bloom={0.92}
               speed={0}
-              shape="sphere"
-              type="4x4"
-              size={14}
-              scale={0.5}
-              colorFront="#F7F4EF"
+              scale={2.85}
               colorBack="#00000000"
-              style={{ width: "100%", height: "100%", backgroundColor: "#1E3A8A" }}
+              colors={["#F8F5F0"]}
+              colorBloom="#F8F5F0"
+              style={{ width: "100%", height: "100%" }}
             />
           </div>
 

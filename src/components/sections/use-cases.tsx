@@ -1,6 +1,3 @@
-"use client";
-
-import { Dithering } from "@paper-design/shaders-react";
 import { FadeUp } from "@/components/fade-up";
 
 const CASES = [
@@ -23,21 +20,7 @@ const CASES = [
 
 export function UseCases() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <Dithering
-          speed={0}
-          shape="simplex"
-          type="8x8"
-          size={11}
-          scale={1}
-          colorFront="#1E3A8A"
-          colorBack="#00000000"
-          style={{ width: "100%", height: "100%", backgroundColor: "#F8F5F0" }}
-        />
-      </div>
-
-      <div className="relative z-10 px-6 md:px-10 py-20 md:py-40">
+    <section className="px-6 md:px-10 py-20 md:py-40">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-16 items-center">
           <FadeUp>
             <div className="bg-accent p-8 md:p-[40px] shadow-[10px_12px_34px_0px_rgba(0,0,0,0.08),42px_46px_62px_0px_rgba(0,0,0,0.07),94px_104px_84px_0px_rgba(0,0,0,0.04)]">
@@ -62,7 +45,6 @@ export function UseCases() {
             ))}
           </div>
         </div>
-      </div>
     </section>
   );
 }

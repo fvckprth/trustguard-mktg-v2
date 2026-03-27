@@ -12,20 +12,20 @@ export function Hero() {
         style={{ maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)" }}
       >
         <GodRays
-          offsetX={0.34}
-          offsetY={-0.85}
-          intensity={0.79}
-          spotty={1}
-          midSize={0}
-          midIntensity={0.59}
-          density={0.41}
-          bloom={1}
-          speed={1.55}
-          scale={4}
+          offsetX={0}
+          offsetY={0.7}
+          intensity={0.8}
+          spotty={0.3}
+          midSize={0.2}
+          midIntensity={1}
+          density={0.3}
+          bloom={0.92}
+          speed={0}
+          scale={2.85}
           colorBack="#00000000"
           colors={["#1E3A8A"]}
           colorBloom="#1E3A8A"
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%", height: "100%", backgroundColor: "#F8F5F0" }}
         />
       </div>
 
