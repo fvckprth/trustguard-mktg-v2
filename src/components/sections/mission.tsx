@@ -35,7 +35,7 @@ export function Mission() {
             <div>
               <Link
                 href="/company"
-                className="font-mono inline-flex items-center justify-center bg-white text-accent h-14 md:h-[64px] px-8 md:px-[40px] text-base md:text-[24px] tracking-[-0.04em] shadow-2xl hover:bg-white/90 transition-colors"
+                className="font-mono inline-flex items-center justify-center bg-background text-accent h-14 md:h-[64px] px-8 md:px-[40px] text-base md:text-[24px] tracking-[-0.04em] shadow-2xl hover:bg-background/90 transition-colors"
               >
                 Learn more
               </Link>

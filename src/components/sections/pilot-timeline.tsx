@@ -79,7 +79,7 @@ export function PilotTimeline() {
                   {DAY_30.description}
                 </p>
               </div>
-              <div className="bg-black p-6 md:p-8 flex flex-col gap-5 flex-1">
+              <div className="bg-accent p-6 md:p-8 flex flex-col gap-5 flex-1">
                 {DAY_30.items.map((item) => (
                   <div key={item} className="flex items-center gap-4">
                     <RiCheckLine size={18} className="shrink-0 text-white" />

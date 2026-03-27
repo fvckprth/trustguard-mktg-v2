@@ -3,7 +3,7 @@ import { FadeUp } from "@/components/fade-up";
 import { IllustrationFadeFrame } from "@/components/illustration-fade-frame";
 import { EvidenceIngestIllustration } from "@/components/illustrations/evidence-ingest";
 import { AIAnalyticsIllustration } from "@/components/illustrations/ai-analytics";
-import { AuditOutputsIllustration } from "@/components/illustrations/audit-outputs";
+import { FindingsSummaryIllustration } from "@/components/illustrations/findings-summary";
 
 const FLOW_CARDS: {
   title: string;
@@ -12,7 +12,7 @@ const FLOW_CARDS: {
 }[] = [
   {
     title: "Evidence ingest",
-    subtitle: "Policies, attestations, SOC reports, and artifacts",
+    subtitle: "Policies, attestations, SOC reports, etc.",
     Illustration: EvidenceIngestIllustration,
   },
   {
@@ -23,7 +23,7 @@ const FLOW_CARDS: {
   {
     title: "Audit-ready outputs",
     subtitle: "Findings, reports, and evidence trails",
-    Illustration: AuditOutputsIllustration,
+    Illustration: FindingsSummaryIllustration,
   },
 ];
 

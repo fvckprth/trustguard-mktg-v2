@@ -23,9 +23,9 @@ export function ReviewVelocity() {
           <FadeUp delay={100}>
             <Link
               href="/request-demo"
-              className="inline-flex items-center justify-center bg-accent text-white font-mono h-10 px-6 text-sm md:text-base tracking-tight leading-tight hover:bg-[#152E6B] transition-colors w-fit"
+              className="font-mono inline-flex items-center justify-center bg-[#191919] text-white h-14 md:h-[64px] px-8 md:px-[40px] text-base md:text-[24px] tracking-[-0.04em] shadow-[2px_2px_7px_0px_rgba(0,0,0,0.08),8px_9px_13px_0px_rgba(0,0,0,0.07)] hover:bg-background hover:text-accent transition-colors w-fit"
             >
-              Request a demo
+              Get started
             </Link>
           </FadeUp>
         </div>

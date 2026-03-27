@@ -41,7 +41,7 @@ const FEATURES: Feature[] = [
   },
   {
     label: "Reporting",
-    title: "Generate audit-ready reports",
+    title: "Produce compliance reports",
     description:
       "Control breakdowns, executive summaries, and full evidence references — ready to hand to auditors.",
     span: 8,
@@ -61,10 +61,10 @@ function WideCard({ feature }: { feature: Feature }) {
         <p className="font-mono uppercase text-accent tracking-wide text-sm">
           {feature.label}
         </p>
-        <p className="text-foreground text-2xl md:text-[32px] leading-none text-pretty">
+        <p className="text-foreground text-2xl md:text-[32px] leading-snug text-pretty">
           {feature.title}
         </p>
-        <p className="text-muted text-base md:text-lg leading-snug">
+        <p className="text-muted text-base md:text-lg leading-normal">
           {feature.description}
         </p>
       </div>
@@ -84,10 +84,10 @@ function NarrowCard({ feature }: { feature: Feature }) {
         <p className="font-mono uppercase text-accent tracking-wide text-sm">
           {feature.label}
         </p>
-        <p className="text-foreground text-2xl md:text-[32px] leading-none text-pretty">
+        <p className="text-foreground text-2xl md:text-[32px] leading-snug text-pretty">
           {feature.title}
         </p>
-        <p className="text-muted text-base md:text-lg leading-snug">
+        <p className="text-muted text-base md:text-lg leading-normal">
           {feature.description}
         </p>
       </div>

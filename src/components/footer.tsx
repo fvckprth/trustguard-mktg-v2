@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 const FOOTER_LINKS = {
-  Primary: [
-    { label: "Company", href: "/company" },
+  Company: [
+    { label: "About", href: "/company" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
     {
@@ -20,8 +20,8 @@ const FOOTER_LINKS = {
 export function Footer() {
   return (
     <footer className="bg-surface">
-      <div className="max-w-[1280px] mx-auto h-auto min-h-[320px] p-6 md:p-10 flex flex-col">
-        <div className="flex flex-col md:flex-row items-start justify-between flex-1 gap-10 md:gap-0">
+      <div className="max-w-[1280px] mx-auto p-6 md:p-10 flex flex-col">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-10 md:gap-0">
           <div className="flex w-full flex-col gap-20">
             <Link href="/" className="flex shrink-0 items-center">
               <Image
@@ -38,8 +38,11 @@ export function Footer() {
           </div>
 
           <div className="flex gap-10 md:gap-20">
-            {Object.values(FOOTER_LINKS).map((links, index) => (
-              <div key={index} className="flex flex-col gap-4">
+            {Object.entries(FOOTER_LINKS).map(([title, links]) => (
+              <div key={title} className="flex flex-col gap-4">
+                <p className="font-mono text-sm tracking-tight leading-tight text-accent">
+                  {title}
+                </p>
                 {links.map((link) => (
                   <Link
                     key={link.href}

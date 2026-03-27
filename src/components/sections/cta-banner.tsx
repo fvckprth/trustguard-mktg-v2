@@ -1,10 +1,25 @@
 import Link from "next/link";
+import { Dithering } from "@paper-design/shaders-react";
 import { FadeUp } from "@/components/fade-up";
 
 export function CtaBanner() {
   return (
-    <section className="px-6 md:px-10 py-20 md:py-40">
-      <div className="max-w-[1280px] mx-auto flex flex-col items-center gap-20">
+    <section className="relative overflow-hidden px-6 md:px-10 py-20 md:py-40">
+      {/* Dither — bottom-anchored, blends into footer */}
+      <div className="absolute inset-x-0 bottom-0 h-[70%] pointer-events-none">
+        <Dithering
+          speed={0.26}
+          shape="wave"
+          type="random"
+          size={11}
+          scale={1}
+          colorFront="#ECEAE5"
+          colorBack="#00000000"
+          style={{ width: "100%", height: "100%", backgroundColor: "#F8F5F0" }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-[1280px] mx-auto flex flex-col items-center gap-20">
         <FadeUp>
           <h2 className="text-2xl md:text-[5rem] tracking-tighter leading-tight text-center">
           Assessments that
