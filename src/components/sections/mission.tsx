@@ -10,7 +10,7 @@ export function Mission() {
           {/* Dither sphere — bottom-right corner, only quarter visible */}
           <div className="absolute bottom-0 right-0 translate-x-[45%] translate-y-[45%] w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] pointer-events-none">
             <Dithering
-              speed={1.3}
+              speed={0}
               shape="sphere"
               type="4x4"
               size={14}

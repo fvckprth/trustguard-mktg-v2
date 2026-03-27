@@ -8,7 +8,7 @@ export function CtaBanner() {
       {/* Dither — bottom-anchored, blends into footer */}
       <div className="absolute inset-x-0 bottom-0 h-[70%] pointer-events-none">
         <Dithering
-          speed={0.26}
+          speed={0}
           shape="wave"
           type="random"
           size={11}
@@ -22,9 +22,9 @@ export function CtaBanner() {
       <div className="relative z-10 max-w-[1280px] mx-auto flex flex-col items-center gap-20">
         <FadeUp>
           <h2 className="text-2xl md:text-[5rem] tracking-tighter leading-tight text-center">
-          Assessments that
+          Deeper coverage.
           <br />
-          actually hold up.
+          Richer findings.
           </h2>
         </FadeUp>
 

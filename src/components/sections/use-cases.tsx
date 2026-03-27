@@ -26,7 +26,7 @@ export function UseCases() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <Dithering
-          speed={0.52}
+          speed={0}
           shape="simplex"
           type="8x8"
           size={11}

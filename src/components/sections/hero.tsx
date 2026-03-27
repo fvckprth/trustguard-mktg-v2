@@ -9,7 +9,7 @@ export function Hero() {
     <section className="relative min-h-[700px] md:min-h-[904px] overflow-hidden bg-background">
       <div className="absolute inset-x-0 bottom-0 h-[60%] pointer-events-none">
         <Dithering
-          speed={0.26}
+          speed={0}
           shape="wave"
           type="random"
           size={11}
@@ -26,11 +26,11 @@ export function Hero() {
             className="text-[40px] md:text-[64px] leading-[1.25] tracking-[-0.02em] text-[#191919] text-left md:pl-[120px] text-pretty"
             style={{ fontFeatureSettings: "'ordn' 1, 'ss04' 1, 'liga' 0, 'lnum' 1, 'tnum' 1" }}
           >
-            AI-Driven Compliance
+            Native Agentic AI.
             <br />
-            Assessments for
+            Precision and Elegance for
             <br />
-            Any Environment
+            Every Risk Assessment.
           </h1>
         </FadeUp>
 
@@ -40,11 +40,11 @@ export function Hero() {
         >
           <div className="bg-[#1E3A8A] p-8 md:p-[40px] w-full shadow-[10px_12px_34px_0px_rgba(0,0,0,0.08),42px_46px_62px_0px_rgba(0,0,0,0.07),94px_104px_84px_0px_rgba(0,0,0,0.04)]">
             <p className="font-mono text-white text-base md:text-[24px] leading-[1.5] tracking-[-0.04em]">
-              Assess vendors, audit controls,
+              Vendor risk. Internal audits.
               <br className="hidden md:block" />
-              and evaluate your compliance posture —
+              Compliance programs.
               <br className="hidden md:block" />
-              one engine, any framework.
+              One agentic platform, any framework.
             </p>
           </div>
           <Link
