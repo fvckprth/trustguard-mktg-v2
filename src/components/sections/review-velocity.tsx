@@ -16,6 +16,7 @@ export function ReviewVelocity() {
           <FadeUp>
             <div className="flex flex-col gap-2 text-lg md:text-[2.5rem] tracking-tight leading-snug">
               <p className="text-foreground">Review more with the same team</p>
+              <p className="text-muted">Broader coverage. Richer findings.</p>
             </div>
           </FadeUp>
 

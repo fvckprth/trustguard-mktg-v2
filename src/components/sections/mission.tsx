@@ -24,12 +24,12 @@ export function Mission() {
           <div className="relative z-10 flex flex-col gap-16">
             <div className="flex flex-col gap-10 text-lg md:text-[2rem] tracking-tight leading-snug max-w-full md:max-w-[540px] text-white">
               <p>
-                Our approach is shaped by thousands of reviews, audits, and
-                compliance programs.
+                Built for scale. Precision and elegance in every finding.
+                Surface what manual assessments can&apos;t.
               </p>
               <p>
-                Built by practitioners who managed risk at Fortune 500
-                companies.
+                Continuous deep monitoring meets operator mentality&mdash;built
+                by practitioners who managed risk at Fortune 500 companies.
               </p>
             </div>
             <div>

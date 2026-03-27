@@ -1,63 +1,41 @@
-import type { ComponentType } from "react";
 import { FadeUp } from "@/components/fade-up";
-import type { LogoProps } from "@/components/logos";
-import {
-  JiraLogo,
-  GooglecloudLogo,
-  OktaLogo,
-  SplunkLogo,
-  Lcn1passwordLogo,
-  ConfluenceLogo,
-  DatadogLogo,
-  DockerLogo,
-  GithubLogo,
-  NotionLogo,
-  PagerdutyLogo,
-  QualysLogo,
-  AwsLogo,
-  SlackLogo,
-  SnowflakeLogo,
-  TerraformLogo,
-  SalesforceLogo,
-  SnykLogo,
-  ElasticLogo,
-  CloudflareLogo,
-  MongodbLogo,
-  AzureLogo,
-  GrafanaLogo,
-} from "@/components/logos";
 
-const ROWS: { name: string; Logo: ComponentType<LogoProps> }[][] = [
+const ROWS: { name: string; src: string }[][] = [
   [
-    { name: "AWS", Logo: AwsLogo },
-    { name: "Okta", Logo: OktaLogo },
-    { name: "GitHub", Logo: GithubLogo },
-    { name: "Salesforce", Logo: SalesforceLogo },
-    { name: "Snowflake", Logo: SnowflakeLogo },
-    { name: "Qualys", Logo: QualysLogo },
+    { name: "AWS", src: "https://svgl.app/library/aws_dark.svg" },
+    { name: "Auth0", src: "https://svgl.app/library/auth0.svg" },
+    { name: "GitHub", src: "https://svgl.app/library/github_dark.svg" },
+    { name: "Salesforce", src: "https://svgl.app/library/salesforce.svg" },
+    { name: "Kubernetes", src: "https://svgl.app/library/kubernetes.svg" },
+    { name: "Defender", src: "https://svgl.app/library/microsoft-defender.svg" },
+    { name: "Vercel", src: "https://svgl.app/library/vercel_dark.svg" },
+    { name: "Snowflake", src: "https://cdn.simpleicons.org/snowflake/29B5E8" },
+    { name: "Slack", src: "https://svgl.app/library/slack.svg" },
+    { name: "Stripe", src: "https://svgl.app/library/stripe.svg" },
   ],
   [
-    { name: "Slack", Logo: SlackLogo },
-    { name: "Jira", Logo: JiraLogo },
-    { name: "Datadog", Logo: DatadogLogo },
-    { name: "Terraform", Logo: TerraformLogo },
-    { name: "Elastic", Logo: ElasticLogo },
-    { name: "Snyk", Logo: SnykLogo },
+    { name: "Atlassian", src: "https://svgl.app/library/atlassian.svg" },
+    { name: "Datadog", src: "https://svgl.app/library/datadog.svg" },
+    { name: "Terraform", src: "https://svgl.app/library/terraform.svg" },
+    { name: "GitLab", src: "https://svgl.app/library/gitlab.svg" },
+    { name: "PostgreSQL", src: "https://svgl.app/library/postgresql.svg" },
+    { name: "Twilio", src: "https://svgl.app/library/twilio.svg" },
+    { name: "Google Cloud", src: "https://svgl.app/library/google-cloud.svg" },
+    { name: "Docker", src: "https://svgl.app/library/docker.svg" },
+    { name: "Dropbox", src: "https://svgl.app/library/dropbox.svg" },
+    { name: "MongoDB", src: "https://svgl.app/library/mongodb-icon-dark.svg" },
   ],
   [
-    { name: "Google Cloud", Logo: GooglecloudLogo },
-    { name: "Docker", Logo: DockerLogo },
-    { name: "Confluence", Logo: ConfluenceLogo },
-    { name: "MongoDB", Logo: MongodbLogo },
-    { name: "PagerDuty", Logo: PagerdutyLogo },
-    { name: "Azure", Logo: AzureLogo },
-  ],
-  [
-    { name: "1Password", Logo: Lcn1passwordLogo },
-    { name: "Notion", Logo: NotionLogo },
-    { name: "Splunk", Logo: SplunkLogo },
-    { name: "Cloudflare", Logo: CloudflareLogo },
-    { name: "Grafana", Logo: GrafanaLogo },
+    { name: "Linear", src: "https://svgl.app/library/linear.svg" },
+    { name: "Azure", src: "https://svgl.app/library/azure.svg" },
+    { name: "Supabase", src: "https://svgl.app/library/supabase.svg" },
+    { name: "Kafka", src: "https://cdn.simpleicons.org/apachekafka/white" },
+    { name: "1Password", src: "https://svgl.app/library/1password-dark.svg" },
+    { name: "Notion", src: "https://svgl.app/library/notion.svg" },
+    { name: "Postman", src: "https://svgl.app/library/postman.svg" },
+    { name: "Cloudflare", src: "https://svgl.app/library/cloudflare.svg" },
+    { name: "Grafana", src: "https://svgl.app/library/grafana.svg" },
+    { name: "Redis", src: "https://svgl.app/library/redis.svg" },
   ],
 ];
 
@@ -65,9 +43,9 @@ export function Integrations() {
   return (
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto">
-      <div className="bg-[#191919] px-6 md:px-10 py-20 md:py-30 shadow-2xl">
+      <div className="bg-[#191919] px-6 md:px-20 py-20 md:py-20 shadow-2xl overflow-hidden">
       <div className="flex flex-col items-center gap-8">
-        <FadeUp className="w-full max-w-[700px] flex flex-col gap-6 items-center text-center">
+        <FadeUp className="w-full max-w-[700px] flex flex-col gap-4 items-center text-center">
           <p className="text-2xl md:text-4xl tracking-tight leading-tight text-white">
             700+ integrations
           </p>
@@ -77,31 +55,37 @@ export function Integrations() {
         </FadeUp>
 
         <FadeUp delay={100} className="w-full">
-          <div className="flex flex-col gap-1.5 md:gap-2">
+          <div className="flex flex-col gap-3 -mx-6 md:-mx-20">
             {ROWS.map((row, rowIndex) => (
               <div
                 key={rowIndex}
                 className="w-full overflow-hidden"
                 style={{
                   maskImage:
-                    "linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%)",
+                    "linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
                   WebkitMaskImage:
-                    "linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%)",
+                    "linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
                 }}
               >
                 <div
-                  className="flex gap-1.5 md:gap-2 w-max mx-auto"
+                  className="flex gap-3"
                   style={{
-                    transform: rowIndex % 2 === 1 ? "translateX(calc(5rem + 0.25rem))" : undefined,
+                    transform: rowIndex % 2 === 1 ? "translateX(calc(-3.5rem - 0.125rem))" : undefined,
                   }}
                 >
-                  {[...row, ...row].map((item, i) => (
+                  {[...row, ...row, ...row].map((item, i) => (
                     <div
                       key={`${item.name}-${rowIndex}-${i}`}
-                      className="w-28 h-14 md:w-40 md:h-20 shrink-0 bg-white/5 flex items-center justify-center gap-2"
+                      className="w-20 h-20 md:w-28 md:h-28 shrink-0 bg-white/5 flex flex-col items-center justify-center gap-3"
                     >
-                      <item.Logo className="h-5 md:h-6 w-auto shrink-0" />
-                      <span className="text-[10px] md:text-xs text-white/60 tracking-tight leading-tight">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={item.src}
+                        alt={item.name}
+                        className="h-5 md:h-6 w-auto shrink-0"
+                        loading="lazy"
+                      />
+                      <span className="text-xs md:text-sm text-white/60 tracking-tight leading-tight">
                         {item.name}
                       </span>
                     </div>
