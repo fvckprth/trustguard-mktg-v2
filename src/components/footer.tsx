@@ -33,7 +33,7 @@ export function Footer() {
               />
             </Link>
             <p className="shrink-0 text-sm tracking-tight leading-tight text-muted">
-              2025 OpenAdmin, Inc.
+              2026 TrustGuard AI Inc.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export function Footer() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-base tracking-tight leading-tight text-foreground hover:text-muted transition-colors"
+                    className="text-base tracking-tight leading-tight text-foreground hover:text-accent transition-colors"
                     {...(link.href.startsWith("http")
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}

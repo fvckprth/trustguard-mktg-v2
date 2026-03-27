@@ -1,32 +1,34 @@
+import { FadeUp } from "@/components/fade-up";
+
 const CAPABILITIES = [
   {
-    title: "Centralize your vendor evidence",
-    description: "Store and reuse files across assessments, with versioning included.",
+    title: "Organize Evidence",
+    description: "Upload, version, and reuse files across assessments. Full audit trail on every artifact.",
   },
   {
-    title: "Run reviews against frameworks",
+    title: "Assess Against Frameworks",
     description:
-      "Use NIST, ISO, FedRAMP, SIG, CAIQ, or create your own framework.",
+      "Map evidence to controls across SOC 2, ISO, FedRAMP, NIST, or custom frameworks.",
   },
   {
-    title: "Evaluate evidence across documents",
+    title: "Surface Gaps",
     description:
-      "Analyze claims against the full evidence set to surface gaps and inconsistencies.",
+      "Cross-reference claims against the full evidence set. Flag inconsistencies automatically.",
   },
   {
-    title: "Generate structured findings",
+    title: "Generate Findings",
     description:
-      "Tie every finding to controls, evidence, severity, and more.",
+      "Tie every finding to a control, evidence source, and severity rating.",
   },
   {
-    title: "Communicate with vendors in context",
+    title: "Collaborate in Context",
     description:
-      "Request evidence, track responses, and close remediation.",
+      "Request missing evidence, assign owners, and track responses to closure.",
   },
   {
-    title: "Produce audit-ready reports",
+    title: "Produce Reports",
     description:
-      "Generate executive summaries, control breakdowns, and evidence refs.",
+      "Export control breakdowns, summaries, and evidence packages for auditors and executives.",
   },
 ] as const;
 
@@ -34,22 +36,26 @@ export function Platform() {
   return (
     <section id="product" className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-16 items-center">
-        <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
-          Evidence in. Findings out. Reports ready.
-        </h2>
+        <FadeUp>
+          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
+            Evidence in. Findings out. Reports ready.
+          </h2>
+        </FadeUp>
 
-        <div className="w-full flex flex-col gap-1">
+        <div className="w-full flex flex-col gap-6">
           {[0, 1, 2].map((row) => (
-            <div key={row} className="grid md:grid-cols-2 gap-1">
-              {CAPABILITIES.slice(row * 2, row * 2 + 2).map((cap) => (
-                <div key={cap.title} className="bg-surface rounded-md min-h-[151px] h-auto p-6 md:p-10">
-                  <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
-                    {cap.title}
-                  </p>
-                  <p className="text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
-                    {cap.description}
-                  </p>
-                </div>
+            <div key={row} className="grid md:grid-cols-2 gap-6">
+              {CAPABILITIES.slice(row * 2, row * 2 + 2).map((cap, i) => (
+                <FadeUp key={cap.title} delay={(row * 2 + i) * 60} className="h-full">
+                  <div className="bg-accent shadow-2xl min-h-[151px] h-full p-6 md:p-10">
+                    <p className="text-base md:text-xl tracking-tight leading-tight text-white">
+                      {cap.title}
+                    </p>
+                    <p className="text-sm md:text-xl leading-snug text-white/50 max-w-full md:max-w-[75%]">
+                      {cap.description}
+                    </p>
+                  </div>
+                </FadeUp>
               ))}
             </div>
           ))}

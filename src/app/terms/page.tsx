@@ -98,7 +98,7 @@ const SECTIONS = [
 export default function TermsPage() {
   return (
     <div className="flex flex-col gap-20 md:gap-40">
-      <section className="pt-32 md:pt-52 px-6 md:px-10">
+      <section className="pt-16 md:pt-32 px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
           <h1 className="text-lg md:text-[2rem] tracking-tight leading-tight text-foreground">
             Terms of Service

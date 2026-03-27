@@ -1,102 +1,61 @@
-import {
-  RiCheckLine,
-  RiAlertLine,
-  RiErrorWarningLine,
-} from "@remixicon/react";
-
 const COLOR = {
-  fg: "#1F3D60",
-  dim: "rgba(31,61,96,0.5)",
-  muted: "rgba(31,61,96,0.25)",
-  rowBg: "rgba(31,61,96,0.05)",
-  barTrack: "rgba(31,61,96,0.05)",
-  barFill: "rgba(31,61,96,0.5)",
+  fg: "#1C1C1C",
+  dim: "rgba(28,28,28,0.5)",
+  muted: "rgba(28,28,28,0.2)",
+  track: "rgba(28,28,28,0.06)",
+  accent: "#318FFA",
+  accentDim: "rgba(49,143,250,0.12)",
 };
 
-const FINDINGS = [
-  { icon: RiCheckLine, label: "Policy verified", severity: "pass" },
-  { icon: RiAlertLine, label: "Missing attestation", severity: "warn" },
-  { icon: RiErrorWarningLine, label: "Inconsistency found", severity: "fail" },
-] as const;
+const CONTROLS = [
+  { label: "Encryption at rest", covered: 92 },
+  { label: "Access controls", covered: 68 },
+  { label: "Incident response", covered: 45 },
+  { label: "Data retention", covered: 88 },
+];
 
-const COVERAGE = 72;
+const AVG = Math.round(CONTROLS.reduce((s, c) => s + c.covered, 0) / CONTROLS.length);
 
 export function AnalyzeEvidenceIllustration() {
   return (
     <div className="size-full min-h-0 select-none flex items-start justify-center px-5 pb-5">
-      <div className="w-full max-w-[320px] flex flex-col gap-4">
-        <div className="flex items-center justify-between gap-3">
-          <span
-            className="text-sm md:text-base leading-tight tracking-tight"
-            style={{ color: COLOR.fg }}
-          >
-            Evidence Review
+      <div className="w-full max-w-[320px] flex flex-col gap-5">
+        <div className="flex items-baseline justify-between gap-3">
+          <span className="text-sm md:text-base leading-tight tracking-tight" style={{ color: COLOR.fg }}>
+            Control Coverage
           </span>
           <span
-            className="text-xs md:text-sm leading-tight tracking-tight shrink-0"
-            style={{ color: COLOR.dim }}
+            className="text-lg md:text-xl leading-none tracking-tighter tabular-nums"
+            style={{ color: COLOR.accent }}
           >
-            3 findings
+            {AVG}%
           </span>
         </div>
 
-        <div className="flex flex-col gap-2">
-          {FINDINGS.map((f) => {
-            const Icon = f.icon;
-            return (
-              <div
-                key={f.label}
-                className="rounded-md p-4 flex items-center gap-3"
-                style={{ background: COLOR.rowBg }}
-              >
-                <Icon
-                  size={18}
-                  className="shrink-0"
-                  style={{
-                    color:
-                      f.severity === "pass"
-                        ? COLOR.fg
-                        : f.severity === "warn"
-                          ? COLOR.dim
-                          : COLOR.muted,
-                  }}
-                />
-                <span
-                  className="text-sm md:text-base leading-tight tracking-tight"
-                  style={{ color: COLOR.fg }}
-                >
-                  {f.label}
+        <div className="flex flex-col gap-3">
+          {CONTROLS.map((c) => (
+            <div key={c.label} className="flex flex-col gap-1.5">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-xs md:text-sm leading-tight tracking-tight" style={{ color: COLOR.dim }}>
+                  {c.label}
+                </span>
+                <span className="text-xs md:text-sm leading-tight tracking-tight tabular-nums shrink-0" style={{ color: COLOR.fg }}>
+                  {c.covered}%
                 </span>
               </div>
-            );
-          })}
+              <div className="w-full h-3 rounded-sm overflow-hidden flex" style={{ background: COLOR.track }}>
+                <div
+                  className="h-full rounded-sm"
+                  style={{ width: `${c.covered}%`, background: COLOR.accent }}
+                />
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="flex flex-col gap-2 pt-0.5">
-          <div className="flex items-center justify-between">
-            <span
-              className="text-xs md:text-sm leading-tight tracking-tight"
-              style={{ color: COLOR.dim }}
-            >
-              Coverage
-            </span>
-            <span
-              className="text-xs md:text-sm leading-tight tracking-tight tabular-nums"
-              style={{ color: COLOR.fg }}
-            >
-              {COVERAGE}%
-            </span>
-          </div>
-          <div
-            className="w-full h-2 rounded-sm overflow-hidden"
-            style={{ background: COLOR.barTrack }}
-          >
-            <div
-              className="h-full rounded-sm"
-              style={{ width: `${COVERAGE}%`, background: COLOR.barFill }}
-            />
-          </div>
-        </div>
+        <span className="text-xs leading-tight tracking-tight" style={{ color: COLOR.dim }}>
+          {AVG}% coverage across {CONTROLS.length} control areas
+        </span>
       </div>
     </div>
   );

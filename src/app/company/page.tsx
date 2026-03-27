@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 export const metadata: Metadata = {
   title: "Company",
   description:
-    "Built by practitioners, for practitioners. We've spent decades managing third-party risk at Fortune 500 companies.",
+    "Built by practitioners who spent decades managing compliance and risk at Fortune 500 companies.",
   alternates: { canonical: "https://trustguardai.com/company" },
 };
 
@@ -29,45 +29,40 @@ const STATS = [
 
 const APPROACH = [
   {
-    title: "Depth Over Speed",
+    title: "Every page, every claim",
     description:
-      "AI that reads every page of every SOC report, cross-references claims against evidence, and surfaces what actually matters\u2014not just what\u2019s easy to find.",
+      "AI that reads every page of every SOC report and cross-references claims against evidence. It surfaces what actually matters\u2014not just what\u2019s easy to find.",
   },
   {
-    title: "Confidence Over Coverage",
+    title: "Findings you can cite",
     description:
       "Every finding comes with evidence citations. Know exactly why something is flagged, with direct links to the source documentation.",
   },
   {
-    title: "Speed That Scales",
+    title: "90% faster, same rigor",
     description:
-      "Reduce assessment time by 90% without sacrificing thoroughness. Process hundreds of vendor documents in the time it takes to review one manually.",
+      "Process hundreds of documents in the time it takes to review one manually. Assessment speed scales with your portfolio.",
   },
   {
-    title: "Practitioner-Built",
+    title: "Practitioner-built",
     description:
-      "Designed by CISOs and risk managers who\u2019ve assessed thousands of vendors. Every feature exists because we needed it ourselves.",
+      "Designed by CISOs and risk managers who\u2019ve run thousands of assessments. Every feature exists because we needed it ourselves.",
   },
 ] as const;
 
-const LEADERS = [
+const FOUNDER = {
+  name: "Elena Kvochko",
+  role: "Founder & CEO",
+  photo: "/assets/elena-kvochko.jpeg",
+  bio: "Building an AI-first platform to transform third-party risk. Adjunct professor at Cornell. Previously CISO at SAP, led cybersecurity at Barclays and Bank of America.",
+} as const;
+
+const INVESTORS = [
   {
-    name: "Elena Kvochko",
-    role: "Founder & CEO",
-    photo: "/assets/elena-kvochko.jpeg",
-    bio: "Building an AI-first platform to transform third-party risk. Adjunct professor at Cornell. Previously CISO at SAP, led cybersecurity at Barclays and Bank of America.",
-  },
-  {
-    name: "Subbu Kandikattu",
-    role: "Head of Technology",
-    photo: "/assets/subbu-kandikattu.jpeg",
-    bio: "Leads TrustGuard\u2019s technology vision and engineering. Previously VP of Engineering at Hearst, Sr Engineering Manager at Amazon. Built systems at Microsoft and Expedia.",
-  },
-  {
-    name: "Rajiv Pant",
-    role: "Advisor to CEO & CTO",
-    photo: "/assets/rajiv-pant.jpeg",
-    bio: "President at Flatiron Software and Snapshot AI. Practitioner of synthesis engineering\u2014AI-augmented software development. Former CTO of The New York Times, Chief Product & Technology Officer at Hearst and WSJ.",
+    name: "Jessica Leao",
+    role: "Decibel VC",
+    photo: "/assets/jessica-leao.jpeg",
+    bio: "",
   },
 ] as const;
 
@@ -79,7 +74,7 @@ const companySchema = {
   url: "https://trustguardai.com",
   logo: "https://trustguardai.com/assets/tg-logo.svg",
   description:
-    "AI-powered third-party risk management platform built by practitioners who spent decades managing vendor risk at Fortune 500 companies.",
+    "AI-driven compliance assessment platform built by practitioners who spent decades managing risk at Fortune 500 companies.",
   email: "contact@trustguardai.com",
   address: {
     "@type": "PostalAddress",
@@ -94,12 +89,14 @@ const companySchema = {
     description:
       "Adjunct professor at Cornell. Previously CISO at SAP, led cybersecurity at Barclays and Bank of America.",
   },
-  employee: LEADERS.map((l) => ({
-    "@type": "Person" as const,
-    name: l.name,
-    jobTitle: l.role,
-    description: l.bio,
-  })),
+  employee: [
+    {
+      "@type": "Person" as const,
+      name: FOUNDER.name,
+      jobTitle: FOUNDER.role,
+      description: FOUNDER.bio,
+    },
+  ],
 };
 
 export default function CompanyPage() {
@@ -108,21 +105,21 @@ export default function CompanyPage() {
     <JsonLd data={companySchema} />
     <div className="flex flex-col gap-20 md:gap-40">
       {/* Hero */}
-      <section className="pt-32 md:pt-52 px-6 md:px-10">
+      <section className="pt-16 md:pt-32 px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
           <div className="flex flex-col gap-2">
             <p className="text-lg md:text-[20px] leading-none tracking-tight text-foreground">
               Built by Practitioners, for Practitioners
             </p>
             <p className="text-sm md:text-lg leading-snug text-muted w-full md:w-1/2 tracking-tight">
-              We&apos;ve spent decades managing third-party risk at Fortune 500
+              We&apos;ve spent decades managing compliance and risk at Fortune 500
               companies.
             </p>
           </div>
           <div className="mt-16">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-foreground text-background h-10 px-5 rounded-full text-sm md:text-base tracking-tight leading-tight hover:opacity-80 transition-opacity"
+              className="inline-flex items-center justify-center bg-accent text-white h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-[#0090E0]"
             >
               Contact us
             </Link>
@@ -143,7 +140,7 @@ export default function CompanyPage() {
                 key={stat.value}
                 className="bg-surface rounded-md min-h-[191px] p-6 md:p-10 flex flex-col justify-between gap-6"
               >
-                <p className="text-3xl md:text-[4rem] tracking-tighter leading-tight text-foreground">
+                <p className="text-3xl md:text-[4rem] tracking-tighter leading-tight text-accent">
                   {stat.value}
                 </p>
                 <p className="text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
@@ -270,39 +267,73 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      {/* Leadership */}
+      {/* Founder */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
           <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
-            Leadership
+            Founder
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-1">
-            {LEADERS.map((leader) => (
+          <div className="bg-surface rounded-md p-6 md:p-10 flex flex-col gap-10">
+            <div className="flex items-start gap-6">
+              <Image
+                src={FOUNDER.photo}
+                alt={FOUNDER.name}
+                width={48}
+                height={48}
+                className="shrink-0 size-12 rounded-sm object-cover"
+              />
+              <div className="flex flex-col items-start gap-1">
+                <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
+                  {FOUNDER.name}
+                </p>
+                <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
+                  {FOUNDER.role}
+                </p>
+              </div>
+            </div>
+            <p className="text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
+              {FOUNDER.bio}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Investors */}
+      <section className="px-6 md:px-10">
+        <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
+          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
+            Investors
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-1">
+            {INVESTORS.map((investor) => (
               <div
-                key={leader.name}
+                key={investor.name}
                 className="bg-surface rounded-md p-6 md:p-10 flex flex-col gap-10"
               >
                 <div className="flex items-start gap-6">
                   <Image
-                    src={leader.photo}
-                    alt={leader.name}
+                    src={investor.photo}
+                    alt={investor.name}
                     width={48}
                     height={48}
                     className="shrink-0 size-12 rounded-sm object-cover"
                   />
                   <div className="flex flex-col items-start gap-1">
                     <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
-                      {leader.name}
+                      {investor.name}
                     </p>
                     <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
-                      {leader.role}
+                      {investor.role}
                     </p>
                   </div>
                 </div>
-                <p className="text-sm md:text-xl leading-snug text-muted">
-                  {leader.bio}
-                </p>
+                {investor.bio && (
+                  <p className="text-sm md:text-xl leading-snug text-muted">
+                    {investor.bio}
+                  </p>
+                )}
               </div>
             ))}
           </div>

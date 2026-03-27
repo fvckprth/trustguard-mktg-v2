@@ -51,7 +51,7 @@ const SHOWCASE_ILLUSTRATIONS = [
 
 export default function PlaygroundPage() {
   return (
-    <div className="pt-32 md:pt-52 px-6 md:px-10 pb-20 md:pb-40">
+    <div className="pt-16 md:pt-32 px-6 md:px-10 pb-20 md:pb-40">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
         <div className="flex flex-col gap-2">
           <h1 className="text-lg md:text-[2rem] tracking-tight leading-tight">

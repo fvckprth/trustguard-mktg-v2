@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import { FadeUp } from "@/components/fade-up";
 import { IllustrationFadeFrame } from "@/components/illustration-fade-frame";
 import { EvidenceIngestIllustration } from "@/components/illustrations/evidence-ingest";
 import { AIAnalyticsIllustration } from "@/components/illustrations/ai-analytics";
@@ -11,17 +12,17 @@ const FLOW_CARDS: {
 }[] = [
   {
     title: "Evidence ingest",
-    subtitle: "Policies, attestations, artifacts, etc.",
+    subtitle: "Policies, attestations, SOC reports, and artifacts",
     Illustration: EvidenceIngestIllustration,
   },
   {
     title: "AI analytics",
-    subtitle: "Cross-document reasoning",
+    subtitle: "Claims verified against every document",
     Illustration: AIAnalyticsIllustration,
   },
   {
     title: "Audit-ready outputs",
-    subtitle: "Reports, findings, evidence trails",
+    subtitle: "Findings, reports, and evidence trails",
     Illustration: AuditOutputsIllustration,
   },
 ];
@@ -30,16 +31,16 @@ export function Overview() {
   return (
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
-        <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight">
-          AI-driven assessment for complex risk environments.
-        </h2>
+        <FadeUp>
+          <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight">
+            Ingest evidence. Analyze risk. Produce audit-ready outputs.
+          </h2>
+        </FadeUp>
 
-        <div className="grid md:grid-cols-3 gap-2">
-          {FLOW_CARDS.map((card) => (
-            <div
-              key={card.title}
-              className="bg-surface rounded-md h-[280px] md:h-[400px] flex flex-col overflow-hidden"
-            >
+        <div className="grid md:grid-cols-3 gap-6">
+          {FLOW_CARDS.map((card, i) => (
+            <FadeUp key={card.title} delay={i * 80}>
+              <div className="bg-surface shadow-2xl h-[280px] md:h-[400px] flex flex-col overflow-hidden">
               <div className="flex flex-col gap-1 p-4">
                 <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                   {card.title}
@@ -53,7 +54,8 @@ export function Overview() {
                   <card.Illustration />
                 </IllustrationFadeFrame>
               </div>
-            </div>
+              </div>
+            </FadeUp>
           ))}
         </div>
       </div>

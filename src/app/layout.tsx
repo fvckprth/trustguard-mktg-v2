@@ -5,20 +5,26 @@ import { Footer } from "@/components/footer";
 import { Agentation } from "agentation";
 import "./globals.css";
 
-const fkGrotesk = localFont({
-  src: "../../public/fonts/FKGrotesk-Regular.otf",
-  variable: "--font-fk-grotesk",
+const alliance = localFont({
+  src: "../../public/fonts/AllianceNo.2-Regular.otf",
+  variable: "--font-alliance",
+  display: "swap",
+});
+
+const berkeleyMono = localFont({
+  src: "../../public/fonts/BerkeleyMono-Regular.otf",
+  variable: "--font-berkeley-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://trustguardai.com"),
   title: {
-    default: "TrustGuard AI — Minimize your third-party risk",
-    template: "%s — TrustGuard AI",
+    default: "TrustGuard | AI for Third-Party Risk",
+    template: "%s | TrustGuard AI",
   },
   description:
-    "The most advanced assessment platform to improve review speed, visibility, and audit readiness.",
+    "AI-driven compliance assessments for any environment. Assess vendors, audit controls, and evaluate your compliance posture across any framework.",
   openGraph: {
     type: "website",
     siteName: "TrustGuard AI",
@@ -43,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fkGrotesk.variable} h-full antialiased`}>
+    <html lang="en" className={`${alliance.variable} ${berkeleyMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Nav />
         <main className="flex-1">{children}</main>

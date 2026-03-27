@@ -18,7 +18,7 @@ const organizationSchema = {
   url: "https://trustguardai.com",
   logo: "https://trustguardai.com/assets/tg-logo.svg",
   description:
-    "AI-powered third-party risk management platform that cuts vendor assessment time by 90%.",
+    "AI-driven compliance assessment platform for third-party risk, organizational compliance, and internal audits.",
   email: "contact@trustguardai.com",
   founder: {
     "@type": "Person",

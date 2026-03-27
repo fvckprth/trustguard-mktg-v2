@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join the team building the future of third-party risk management. Open roles at TrustGuard AI.",
+    "Join the team building AI-driven compliance assessment. Open roles at TrustGuard AI.",
   alternates: { canonical: "https://trustguardai.com/careers" },
 };
 
@@ -20,9 +20,9 @@ const VALUES = [
       "It\u2019s not enough to identify problems. We move on them. Progress is visible and measurable.",
   },
   {
-    title: "Practitioner mindset",
+    title: "Operator mentality",
     description:
-      "We build for people who do the work. Our solutions come from understanding real operational pain.",
+      "We build for people who do the work. Every feature comes from understanding real operational pressure.",
   },
   {
     title: "Trust as a process",
@@ -35,15 +35,15 @@ export default function CareersPage() {
   return (
     <div className="flex flex-col gap-20 md:gap-40">
       {/* Hero */}
-      <section className="pt-32 md:pt-52 px-6 md:px-10">
+      <section className="pt-16 md:pt-32 px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
           <h1 className="text-lg md:text-[2rem] tracking-tight leading-tight">
-            Help us shape the future of TPRM
+            Help us shape the future of compliance assessment
           </h1>
           <div className="mt-16">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-foreground text-background h-10 px-5 rounded-full text-sm md:text-base tracking-tight leading-tight hover:opacity-80 transition-opacity"
+              className="inline-flex items-center justify-center bg-accent text-white h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-[#0090E0]"
             >
               Contact us
             </Link>
@@ -86,13 +86,13 @@ export default function CareersPage() {
 
             <div className="text-base md:text-[2rem] tracking-tight leading-snug text-muted space-y-6 md:space-y-8">
               <p>
-                We&apos;re building something meaningful: an AI-first platform
-                that turns compliance into confidence for organizations managing
-                complex vendor ecosystems.
+                We&apos;re building an AI-first platform that turns compliance
+                into confidence for organizations managing complex risk
+                programs.
               </p>
               <p>
-                Our approach is shaped by real reviews, real audits, and real
-                constraints.
+                We operate with urgency and care about the details that matter
+                to auditors.
               </p>
               <p>
                 Founded by security veterans who&apos;ve led trust and security
@@ -120,7 +120,7 @@ export default function CareersPage() {
           </div>
           <Link
             href="/contact"
-            className="shrink-0 inline-flex items-center justify-center bg-foreground text-background h-10 px-5 rounded-full text-sm md:text-base tracking-tight leading-tight hover:opacity-80 transition-opacity"
+            className="shrink-0 inline-flex items-center justify-center bg-accent text-white h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-[#0090E0]"
           >
             Contact us
           </Link>

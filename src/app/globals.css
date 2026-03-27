@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #FFFEF8;
-  --color-foreground: #1F3D60;
-  --color-muted: rgba(31, 61, 96, 0.5);
-  --color-border: rgba(31, 61, 96, 0.1);
-  --color-surface: rgba(31, 61, 96, 0.05);
-  --font-sans: var(--font-fk-grotesk), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-background: #FFFFFF;
+  --color-foreground: #1C1C1C;
+  --color-accent: #318FFA;
+  --color-muted: rgba(28, 28, 28, 0.5);
+  --color-border: rgba(28, 28, 28, 0.1);
+  --color-surface: rgba(28, 28, 28, 0.05);
+  --font-sans: var(--font-alliance), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-berkeley-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+  font-feature-settings: "ss04" 1, "lnum" 1, "tnum" 1;
 }
 
 ::selection {
-  background: #1F3D60;
-  color: #FFFEF8;
+  background: #01A2FF;
+  color: #fff;
 }
+
