@@ -275,79 +275,66 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      {/* Founder */}
+      {/* Founder & Investors */}
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
           <FadeUp>
             <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
-              Founder
-            </h2>
-          </FadeUp>
-
-          <FadeUp delay={80}>
-            <div className="bg-[#F3F3F3] shadow-2xl p-6 md:p-10 flex flex-col gap-10">
-            <div className="flex items-start gap-6">
-              <Image
-                src={FOUNDER.photo}
-                alt={FOUNDER.name}
-                width={48}
-                height={48}
-                className="shrink-0 size-12 rounded-sm object-cover"
-              />
-              <div className="flex flex-col items-start gap-1">
-                <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
-                  {FOUNDER.name}
-                </p>
-                <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
-                  {FOUNDER.role}
-                </p>
-              </div>
-            </div>
-            <p className="text-sm md:text-xl leading-snug text-muted max-w-full md:max-w-[75%]">
-              {FOUNDER.bio}
-            </p>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* Investors */}
-      <section className="px-6 md:px-10">
-        <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
-          <FadeUp>
-            <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
-              Investors
+              Founder &amp; Investors
             </h2>
           </FadeUp>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {INVESTORS.map((investor, i) => (
-              <FadeUp key={investor.name} delay={i * 60}>
-                <div
-                  className="bg-[#F3F3F3] shadow-2xl p-6 md:p-10 flex flex-col gap-10"
-                >
+            <FadeUp delay={60}>
+              <div className="bg-[#F3F3F3] shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
                 <div className="flex items-start gap-6">
                   <Image
-                    src={investor.photo}
-                    alt={investor.name}
+                    src={FOUNDER.photo}
+                    alt={FOUNDER.name}
                     width={48}
                     height={48}
                     className="shrink-0 size-12 rounded-sm object-cover"
                   />
                   <div className="flex flex-col items-start gap-1">
                     <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
-                      {investor.name}
+                      {FOUNDER.name}
                     </p>
                     <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
-                      {investor.role}
+                      {FOUNDER.role}
                     </p>
                   </div>
                 </div>
-                {investor.bio && (
-                  <p className="text-sm md:text-xl leading-snug text-muted">
-                    {investor.bio}
-                  </p>
-                )}
+                <p className="text-sm md:text-xl leading-snug text-muted">
+                  {FOUNDER.bio}
+                </p>
+              </div>
+            </FadeUp>
+
+            {INVESTORS.map((investor, i) => (
+              <FadeUp key={investor.name} delay={(i + 1) * 60 + 60}>
+                <div className="bg-[#F3F3F3] shadow-2xl p-6 md:p-10 flex flex-col gap-10 h-full">
+                  <div className="flex items-start gap-6">
+                    <Image
+                      src={investor.photo}
+                      alt={investor.name}
+                      width={48}
+                      height={48}
+                      className="shrink-0 size-12 rounded-sm object-cover"
+                    />
+                    <div className="flex flex-col items-start gap-1">
+                      <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
+                        {investor.name}
+                      </p>
+                      <p className="text-sm md:text-xl tracking-tight leading-tight text-muted">
+                        {investor.role}
+                      </p>
+                    </div>
+                  </div>
+                  {investor.bio && (
+                    <p className="text-sm md:text-xl leading-snug text-muted">
+                      {investor.bio}
+                    </p>
+                  )}
                 </div>
               </FadeUp>
             ))}
