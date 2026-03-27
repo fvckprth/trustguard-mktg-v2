@@ -60,10 +60,10 @@ const FOUNDER = {
 
 const INVESTORS = [
   {
-    name: "Jessica Leao",
+    name: "Jess Leão",
     role: "Decibel VC",
-    photo: "/assets/jessica-leao.jpeg",
-    bio: "",
+    photo: "/assets/jessica-leao.png",
+    bio: "Partner at Decibel investing in AI-native infrastructure. Previously at Maverick Ventures, led early investments including MosaicML. Former forward deployed engineer at Palantir.",
   },
 ] as const;
 
@@ -199,7 +199,7 @@ export default function CompanyPage() {
                 CROs, and Risk Professionals
               </h2>
 
-              <div className="text-base md:text-[2rem] tracking-tight leading-snug text-white/50 space-y-6 md:space-y-8">
+              <div className="text-base md:text-[24px] tracking-tight leading-snug text-white/50 space-y-6 md:space-y-8">
                 <p>
                   Over my career&mdash;from leading cybersecurity at Barclays and
                   Bank of America, to serving as the first Chief Trust Officer at
