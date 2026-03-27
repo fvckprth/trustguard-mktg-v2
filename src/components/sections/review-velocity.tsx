@@ -16,14 +16,14 @@ export function ReviewVelocity() {
           <FadeUp>
             <div className="flex flex-col gap-2 text-lg md:text-[2.5rem] tracking-tight leading-snug">
               <p className="text-foreground">Review more with the same team</p>
-              <p className="text-muted">Same hours. Broader coverage.</p>
+              <p className="text-foreground">Same hours. Broader coverage.</p>
             </div>
           </FadeUp>
 
           <FadeUp delay={100}>
             <Link
               href="/request-demo"
-              className="inline-flex items-center justify-center bg-accent text-white font-mono h-10 px-6 text-sm md:text-base tracking-tight leading-tight hover:bg-[#0090E0] transition-colors w-fit"
+              className="inline-flex items-center justify-center bg-accent text-white font-mono h-10 px-6 text-sm md:text-base tracking-tight leading-tight hover:bg-[#152E6B] transition-colors w-fit"
             >
               Request a demo
             </Link>

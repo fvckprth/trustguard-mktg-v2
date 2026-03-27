@@ -11,7 +11,7 @@ const COLOR = {
   dim: "rgba(28,28,28,0.5)",
   muted: "rgba(28,28,28,0.2)",
   rowBg: "rgba(28,28,28,0.04)",
-  accent: "#318FFA",
+  accent: "#1E3A8A",
   accentDim: "rgba(49,143,250,0.12)",
 };
 

@@ -40,7 +40,7 @@ export function Overview() {
         <div className="grid md:grid-cols-3 gap-6">
           {FLOW_CARDS.map((card, i) => (
             <FadeUp key={card.title} delay={i * 80}>
-              <div className="bg-surface shadow-2xl h-[280px] md:h-[400px] flex flex-col overflow-hidden">
+              <div className="bg-background shadow-2xl h-[280px] md:h-[400px] flex flex-col overflow-hidden">
               <div className="flex flex-col gap-1 p-4">
                 <p className="text-base md:text-xl tracking-tight leading-tight text-foreground">
                   {card.title}

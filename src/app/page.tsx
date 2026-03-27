@@ -55,8 +55,8 @@ export default function Home() {
         <ReviewVelocity />
         <Platform />
         <Benefits />
-        <Mission />
         <PilotTimeline />
+        <Mission />
         <CtaBanner />
       </div>
     </>

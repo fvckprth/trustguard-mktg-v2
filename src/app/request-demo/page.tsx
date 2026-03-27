@@ -142,7 +142,7 @@ export default function RequestDemoPage() {
               </p>
               <button
                 type="submit"
-                className="inline-flex items-center justify-center bg-accent text-white h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-[#0090E0]"
+                className="inline-flex items-center justify-center bg-accent text-white h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-[#152E6B]"
               >
                 Request demo
               </button>

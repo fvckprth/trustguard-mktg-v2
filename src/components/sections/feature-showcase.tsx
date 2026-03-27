@@ -17,7 +17,7 @@ interface Feature {
 const FEATURES: Feature[] = [
   {
     label: "Analysis",
-    title: "Analyze Evidence",
+    title: "Analyze evidence",
     description:
       "Surface missing proof and inconsistencies before reviews stall.",
     span: 8,
@@ -41,7 +41,7 @@ const FEATURES: Feature[] = [
   },
   {
     label: "Reporting",
-    title: "Generate Audit-Ready Reports",
+    title: "Generate audit-ready reports",
     description:
       "Control breakdowns, executive summaries, and full evidence references — ready to hand to auditors.",
     span: 8,
@@ -61,7 +61,7 @@ function WideCard({ feature }: { feature: Feature }) {
         <p className="font-mono uppercase text-accent tracking-wide text-sm">
           {feature.label}
         </p>
-        <p className="text-foreground text-2xl md:text-[32px] leading-none">
+        <p className="text-foreground text-2xl md:text-[32px] leading-none text-pretty">
           {feature.title}
         </p>
         <p className="text-muted text-base md:text-lg leading-snug">
@@ -84,7 +84,7 @@ function NarrowCard({ feature }: { feature: Feature }) {
         <p className="font-mono uppercase text-accent tracking-wide text-sm">
           {feature.label}
         </p>
-        <p className="text-foreground text-2xl md:text-[32px] leading-none">
+        <p className="text-foreground text-2xl md:text-[32px] leading-none text-pretty">
           {feature.title}
         </p>
         <p className="text-muted text-base md:text-lg leading-snug">

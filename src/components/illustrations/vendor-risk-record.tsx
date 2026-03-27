@@ -2,7 +2,7 @@ const COLOR = {
   fg: "#1C1C1C",
   dim: "rgba(28,28,28,0.5)",
   muted: "rgba(28,28,28,0.15)",
-  accent: "#318FFA",
+  accent: "#1E3A8A",
   accentFill: "rgba(49,143,250,0.15)",
 };
 

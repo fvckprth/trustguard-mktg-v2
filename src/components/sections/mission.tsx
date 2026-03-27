@@ -1,16 +1,27 @@
 import Link from "next/link";
+import { Dithering } from "@paper-design/shaders-react";
 import { FadeUp } from "@/components/fade-up";
 
 export function Mission() {
   return (
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto">
-        <FadeUp className="bg-accent shadow-2xl flex flex-col md:flex-row items-start justify-between p-8 md:p-40 gap-10 md:gap-16">
-          <p className="text-sm md:text-xl leading-snug text-white tracking-tight shrink-0">
-            Mission
-          </p>
+        <FadeUp className="relative bg-accent shadow-2xl overflow-hidden flex flex-col md:flex-row items-start justify-between p-8 md:p-40 gap-10 md:gap-16">
+          {/* Dither sphere — bottom-right corner, only quarter visible */}
+          <div className="absolute bottom-0 right-0 translate-x-[45%] translate-y-[45%] w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] pointer-events-none">
+            <Dithering
+              speed={1.3}
+              shape="sphere"
+              type="4x4"
+              size={14}
+              scale={0.5}
+              colorFront="#F7F4EF"
+              colorBack="#00000000"
+              style={{ width: "100%", height: "100%", backgroundColor: "#1E3A8A" }}
+            />
+          </div>
 
-          <div className="flex flex-col gap-16">
+          <div className="relative z-10 flex flex-col gap-16">
             <div className="flex flex-col gap-10 text-lg md:text-[2rem] tracking-tight leading-snug max-w-full md:max-w-[540px] text-white">
               <p>
                 Our approach is shaped by thousands of reviews, audits, and
@@ -24,7 +35,7 @@ export function Mission() {
             <div>
               <Link
                 href="/company"
-                className="inline-flex items-center justify-center bg-white text-accent h-10 px-5 text-sm md:text-base tracking-tight leading-tight hover:bg-white/90"
+                className="font-mono inline-flex items-center justify-center bg-white text-accent h-14 md:h-[64px] px-8 md:px-[40px] text-base md:text-[24px] tracking-[-0.04em] shadow-2xl hover:bg-white/90 transition-colors"
               >
                 Learn more
               </Link>

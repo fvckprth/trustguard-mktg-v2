@@ -31,18 +31,20 @@ export function UseCases() {
           type="8x8"
           size={11}
           scale={1}
-          colorFront="#FFFFFF"
+          colorFront="#1E3A8A"
           colorBack="#00000000"
-          style={{ width: "100%", height: "100%", backgroundColor: "#F3F3F3" }}
+          style={{ width: "100%", height: "100%", backgroundColor: "#F8F5F0" }}
         />
       </div>
 
-      <div className="relative z-10 px-6 md:px-[240px] py-20 md:py-40">
+      <div className="relative z-10 px-6 md:px-10 py-20 md:py-40">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-16 items-center">
           <FadeUp>
-            <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-center">
-              Built for Every Assessment
-            </h2>
+            <div className="bg-accent p-8 md:p-[40px] shadow-[10px_12px_34px_0px_rgba(0,0,0,0.08),42px_46px_62px_0px_rgba(0,0,0,0.07),94px_104px_84px_0px_rgba(0,0,0,0.04)]">
+              <h2 className="font-mono text-white text-base md:text-[24px] leading-[1.5] tracking-[-0.04em]">
+                Built for Every Assessment
+              </h2>
+            </div>
           </FadeUp>
 
           <div className="w-full grid md:grid-cols-3 md:auto-rows-[1fr] gap-6">

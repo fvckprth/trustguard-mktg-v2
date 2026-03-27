@@ -24,7 +24,7 @@ export function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-10 transition-colors duration-300 ${
-        scrolled ? "bg-white" : ""
+        scrolled ? "bg-background" : ""
       }`}
     >
       <nav className="max-w-[1280px] mx-auto h-16 flex items-center justify-between">
@@ -52,7 +52,7 @@ export function Nav() {
 
           <Link
             href="/request-demo"
-            className="font-mono inline-flex items-center justify-center bg-[#318FFA] text-white h-[40px] px-6 text-base leading-[1.2] tracking-[-0.04em] shadow-[2px_2px_7px_0px_rgba(0,0,0,0.08),8px_9px_13px_0px_rgba(0,0,0,0.07)] hover:opacity-90 transition-opacity"
+            className="font-mono inline-flex items-center justify-center bg-[#1E3A8A] text-white h-[40px] px-6 text-base leading-[1.2] tracking-[-0.04em] shadow-[2px_2px_7px_0px_rgba(0,0,0,0.08),8px_9px_13px_0px_rgba(0,0,0,0.07)] hover:opacity-90 transition-opacity"
           >
             Request a demo
           </Link>
@@ -68,7 +68,7 @@ export function Nav() {
       </nav>
 
       {mobileOpen && (
-        <div className="md:hidden overflow-hidden bg-white">
+        <div className="md:hidden overflow-hidden bg-background">
           <div className="px-10 pb-6 pt-4 flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <Link
@@ -83,7 +83,7 @@ export function Nav() {
             <div className="mt-2">
               <Link
                 href="/request-demo"
-                className="font-mono inline-flex items-center justify-center bg-[#318FFA] text-white h-[40px] px-6 text-base tracking-[-0.04em] hover:opacity-90 transition-opacity"
+                className="font-mono inline-flex items-center justify-center bg-[#1E3A8A] text-white h-[40px] px-6 text-base tracking-[-0.04em] hover:opacity-90 transition-opacity"
                 onClick={() => setMobileOpen(false)}
               >
                 Request a demo
