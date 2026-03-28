@@ -10,7 +10,7 @@ export async function Mission() {
       <div className="max-w-[1280px] mx-auto">
         <FadeUp className="relative bg-accent shadow-2xl overflow-hidden flex flex-col md:flex-row items-start justify-between p-8 md:p-40 gap-10 md:gap-16">
           <div className="flex flex-col gap-16">
-            <div className="flex flex-col gap-10 text-lg md:text-[2rem] tracking-tight leading-snug max-w-full md:max-w-[540px] text-white">
+            <div className="flex flex-col gap-10 text-lg md:text-[24px] tracking-tight leading-snug max-w-full md:max-w-[540px] text-white">
               <p>{c("home.mission.paragraph1")}</p>
               <p>{c("home.mission.paragraph2")}</p>
             </div>
