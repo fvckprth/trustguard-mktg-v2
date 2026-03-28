@@ -89,7 +89,7 @@ export default async function CompanyPage() {
 
       {/* Why we exist */}
       <section className="md:px-10">
-        <div className="max-w-[1280px] mx-auto md:bg-[#191919]/5 px-6 py-10 md:px-20 md:py-40 flex flex-col gap-8">
+        <div className="max-w-[1280px] mx-auto md:bg-[#191919]/5 px-6 py-10 md:px-20 md:py-[80px] flex flex-col gap-8">
           <FadeUp>
             <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight">
               {c("company.stats.heading")}
@@ -151,14 +151,7 @@ export default async function CompanyPage() {
       <section className="px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
           <FadeUp>
-            <div className="bg-accent shadow-2xl p-6 md:p-16 lg:px-60 lg:py-40 flex flex-col gap-10 md:gap-20">
-              <Image
-                src="/assets/tg-logo.svg"
-                alt="TrustGuard AI"
-                width={89}
-                height={24}
-                className="h-6 w-auto brightness-0 invert opacity-25 self-start"
-              />
+            <div className="bg-accent shadow-2xl p-6 md:p-16 lg:px-60 lg:py-[80px] flex flex-col gap-10 md:gap-[40px]">
               <h2 className="text-lg md:text-[2rem] tracking-tight leading-tight text-white">
                 {letterHeadingLines.map((line, i) => (
                   <span key={i}>
