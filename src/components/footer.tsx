@@ -22,7 +22,7 @@ export function Footer() {
     <footer className="bg-surface">
       <div className="max-w-[1280px] mx-auto p-6 md:p-10 flex flex-col">
         <div className="flex flex-col md:flex-row items-start justify-between gap-10 md:gap-0">
-          <div className="flex w-full flex-col gap-20">
+          <div className="flex w-full flex-col justify-between gap-20 self-stretch">
             <Link href="/" className="flex shrink-0 items-center">
               <Image
                 src="/assets/tg-logo.svg"
