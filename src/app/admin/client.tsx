@@ -2,6 +2,7 @@
 
 import { useActionState, useTransition } from "react";
 import { login, logout, saveContent, seedContent } from "./actions";
+import type { DemoRequest } from "./page";
 
 export function LoginForm() {
   const [state, formAction, pending] = useActionState(login, {});
@@ -74,9 +75,9 @@ export function ContentForm({
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
-      <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold text-[#191919]">Content Editor</h1>
-        <div className="flex gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <h1 className="text-xl sm:text-2xl font-bold text-[#191919]">Content Editor</h1>
+        <div className="flex gap-3 shrink-0">
           <form
             action={() => startSeed(async () => {
               const result = await seedContent();
@@ -120,7 +121,7 @@ export function ContentForm({
       >
         <div className="flex flex-col gap-8">
           {groups.map((group) => (
-            <fieldset key={group.section} className="border border-[#ddd] bg-white p-6">
+            <fieldset key={group.section} className="border border-[#ddd] bg-white p-4 sm:p-6">
               <legend className="font-mono text-sm text-[#1E3A8A] px-2 font-bold">
                 {SECTION_LABELS[group.section] ?? group.section}
               </legend>
@@ -135,7 +136,7 @@ export function ContentForm({
                         className="text-xs font-mono text-[#666]"
                       >
                         {fieldLabel(key)}
-                        <span className="text-[#aaa] ml-2">({key})</span>
+                        <span className="text-[#aaa] ml-2 hidden sm:inline">({key})</span>
                       </label>
                       {isMultiline ? (
                         <textarea
@@ -172,6 +173,48 @@ export function ContentForm({
           </button>
         </div>
       </form>
+    </div>
+  );
+}
+
+export function DemoRequestsTable({ requests }: { requests: DemoRequest[] }) {
+  if (requests.length === 0) return null;
+
+  return (
+    <div className="max-w-4xl mx-auto px-6 pt-12">
+      <h2 className="text-xl font-bold text-[#191919] mb-4">
+        Demo Requests ({requests.length})
+      </h2>
+      <div className="border border-[#ddd] bg-white overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-[#ddd] bg-[#fafafa]">
+              <th className="text-left px-4 py-3 font-mono text-xs text-[#666]">Name</th>
+              <th className="text-left px-4 py-3 font-mono text-xs text-[#666]">Email</th>
+              <th className="text-left px-4 py-3 font-mono text-xs text-[#666]">Company</th>
+              <th className="text-left px-4 py-3 font-mono text-xs text-[#666]">Message</th>
+              <th className="text-left px-4 py-3 font-mono text-xs text-[#666]">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {requests.map((r) => (
+              <tr key={r.id} className="border-b border-[#eee] last:border-0">
+                <td className="px-4 py-3 whitespace-nowrap">{r.full_name}</td>
+                <td className="px-4 py-3 whitespace-nowrap">
+                  <a href={`mailto:${r.work_email}`} className="text-[#1E3A8A] underline">
+                    {r.work_email}
+                  </a>
+                </td>
+                <td className="px-4 py-3 whitespace-nowrap">{r.company}</td>
+                <td className="px-4 py-3 max-w-[300px] truncate">{r.message || "\u2014"}</td>
+                <td className="px-4 py-3 whitespace-nowrap text-[#666]">
+                  {new Date(r.created_at).toLocaleDateString()}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

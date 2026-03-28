@@ -1,7 +1,7 @@
 import { sql } from "@vercel/postgres";
 import { DEFAULTS } from "@/lib/content-defaults";
 import { isAuthenticated } from "./actions";
-import { LoginForm, ContentForm } from "./client";
+import { LoginForm, ContentForm, DemoRequestsTable } from "./client";
 
 async function getDbValues(): Promise<Record<string, string>> {
   try {
@@ -15,6 +15,29 @@ async function getDbValues(): Promise<Record<string, string>> {
     return map;
   } catch {
     return {};
+  }
+}
+
+export interface DemoRequest {
+  id: number;
+  full_name: string;
+  work_email: string;
+  company: string;
+  message: string | null;
+  created_at: string;
+}
+
+async function getDemoRequests(): Promise<DemoRequest[]> {
+  try {
+    const { rows } = await sql<DemoRequest>`
+      SELECT id, full_name, work_email, company, message, created_at
+      FROM demo_requests
+      ORDER BY created_at DESC
+      LIMIT 100
+    `;
+    return rows;
+  } catch {
+    return [];
   }
 }
 
@@ -55,5 +78,12 @@ export default async function AdminPage() {
     values[key] = dbValues[key] ?? DEFAULTS[key];
   }
 
-  return <ContentForm groups={groups} values={values} />;
+  const demoRequests = await getDemoRequests();
+
+  return (
+    <>
+      <DemoRequestsTable requests={demoRequests} />
+      <ContentForm groups={groups} values={values} />
+    </>
+  );
 }
