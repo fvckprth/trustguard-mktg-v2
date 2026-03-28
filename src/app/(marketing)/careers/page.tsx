@@ -32,7 +32,7 @@ const VALUES = [
       "Ongoing assessment of your compliance posture — not a point-in-time snapshot.",
   },
   {
-    title: "Surface what manual reviews can't",
+    title: "Surface what reviews can't",
     description:
       "AI that reads every page and cross-references claims across documents — gaps that humans miss become visible.",
   },

@@ -57,7 +57,7 @@ export default function RequestDemoPage() {
           </p>
         </div>
 
-        <div className="bg-[#191919] rounded-md shadow-2xl p-6 md:p-10">
+        <div className="bg-[#191919] shadow-2xl p-6 md:p-10">
           {state.success ? (
             <div className="flex flex-col gap-4 py-10 items-center text-center">
               <p className="text-lg md:text-2xl tracking-tight text-foreground">
