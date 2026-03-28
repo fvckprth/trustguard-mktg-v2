@@ -45,7 +45,7 @@ const VALUES = [
 
 export default function CareersPage() {
   return (
-    <div className="flex flex-col gap-20 md:gap-40">
+    <div className="flex flex-col gap-20 md:gap-[80px]">
       {/* Hero */}
       <section className="pt-16 md:pt-32 px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto flex flex-col items-center">

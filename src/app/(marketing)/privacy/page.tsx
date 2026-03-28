@@ -78,7 +78,7 @@ const SECTIONS = [
 
 export default function PrivacyPage() {
   return (
-    <div className="flex flex-col gap-20 md:gap-40">
+    <div className="flex flex-col gap-20 md:gap-[80px]">
       <section className="pt-16 md:pt-32 px-6 md:px-10">
         <div className="max-w-[1280px] mx-auto">
           <h1 className="text-lg md:text-[2rem] tracking-tight leading-tight text-foreground">

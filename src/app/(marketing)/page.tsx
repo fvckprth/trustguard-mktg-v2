@@ -49,7 +49,7 @@ export default async function Home() {
           ],
         }}
       />
-      <div className="flex flex-col gap-20 md:gap-[120px]">
+      <div className="flex flex-col gap-20 md:gap-[80px]">
         <Hero
           headline={c("home.hero.headline")}
           subhead={c("home.hero.subhead")}
