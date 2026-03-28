@@ -1,53 +1,32 @@
 import { Fragment } from "react";
 import { RiCheckLine, RiArrowRightLine } from "@remixicon/react";
 import { FadeUp } from "@/components/fade-up";
+import { getContent } from "@/lib/content";
 
-const STEPS = [
-  {
-    label: "Upload",
-    description: "Import your evidence",
-    items: [
-      "Connect evidence sources",
-      "Import vendors and policies",
-      "Organize your portfolio",
-    ],
-    cardBg: "bg-[#191919]",
-  },
-  {
-    label: "Assess",
-    description: "Frameworks evaluated in minutes",
-    items: [
-      "Map evidence to controls",
-      "Surface gaps automatically",
-      "Generate cited findings",
-    ],
-    cardBg: "bg-accent",
-  },
-  {
-    label: "Deliver",
-    description: "Audit-ready outputs",
-    items: [
-      "Export stakeholder reports",
-      "Track remediation to closure",
-      "Reassess and confirm fixes",
-    ],
-    cardBg: "bg-accent",
-  },
-];
+const STEP_CARD_BG = ["bg-[#191919]", "bg-accent", "bg-accent"];
 
-export function PilotTimeline() {
+export async function PilotTimeline() {
+  const c = await getContent();
+
+  const steps = [0, 1, 2].map((i) => ({
+    label: c(`home.pilotTimeline.${i}.label`),
+    description: c(`home.pilotTimeline.${i}.description`),
+    items: [0, 1, 2].map((j) => c(`home.pilotTimeline.${i}.items.${j}`)),
+    cardBg: STEP_CARD_BG[i],
+  }));
+
   return (
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto flex flex-col items-center gap-10 md:gap-16">
         <FadeUp>
           <h2 className="text-lg md:text-[64px] tracking-tight leading-tight text-center">
-            See results in minutes
+            {c("home.pilotTimeline.heading")}
           </h2>
         </FadeUp>
 
         <div className="w-full flex flex-col md:flex-row items-center md:items-stretch gap-6">
-          {STEPS.map((step, i) => (
-            <Fragment key={step.label}>
+          {steps.map((step, i) => (
+            <Fragment key={i}>
               {i > 0 && (
                 <>
                   <div className="hidden md:flex items-center justify-center shrink-0">
@@ -73,8 +52,8 @@ export function PilotTimeline() {
                     </p>
                   </div>
                   <div className={`${step.cardBg} shadow-2xl p-6 md:p-8 flex flex-col gap-5 flex-1`}>
-                    {step.items.map((item) => (
-                      <div key={item} className="flex items-center gap-4">
+                    {step.items.map((item, j) => (
+                      <div key={j} className="flex items-center gap-4">
                         <RiCheckLine size={18} className="shrink-0 text-white" />
                         <p className="font-mono text-sm md:text-base tracking-tight leading-snug text-white">
                           {item}

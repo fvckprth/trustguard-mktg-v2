@@ -1,4 +1,5 @@
 import { FadeUp } from "@/components/fade-up";
+import { getContent } from "@/lib/content";
 
 const ROWS: { name: string; src: string }[][] = [
   [
@@ -39,7 +40,9 @@ const ROWS: { name: string; src: string }[][] = [
   ],
 ];
 
-export function Integrations() {
+export async function Integrations() {
+  const c = await getContent();
+
   return (
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto">
@@ -47,10 +50,10 @@ export function Integrations() {
       <div className="flex flex-col items-center gap-6 md:gap-8">
         <FadeUp className="w-full max-w-[700px] flex flex-col gap-4 items-center text-center">
           <p className="text-2xl md:text-4xl tracking-tight leading-tight text-white">
-            700+ integrations
+            {c("home.integrations.heading")}
           </p>
           <p className="text-sm md:text-xl tracking-tight leading-relaxed text-white/50">
-            Pull evidence from the tools your team already uses.
+            {c("home.integrations.subheading")}
           </p>
         </FadeUp>
 

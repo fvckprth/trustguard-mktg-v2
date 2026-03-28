@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
 import { Agentation } from "agentation";
 import "./globals.css";
 
@@ -69,9 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${alliance.variable} ${berkeleyMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        {children}
         {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>

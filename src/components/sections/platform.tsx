@@ -8,63 +8,39 @@ import {
   RiFileChartLine,
 } from "@remixicon/react";
 import type { RemixiconComponentType } from "@remixicon/react";
+import { getContent } from "@/lib/content";
 
-const CAPABILITIES: {
-  title: string;
-  description: string;
-  Icon: RemixiconComponentType;
-}[] = [
-  {
-    title: "Organize Evidence",
-    description: "Version and reuse files across assessments with full audit trails.",
-    Icon: RiFolderLine,
-  },
-  {
-    title: "Assess Against Frameworks",
-    description:
-      "Map evidence to controls for any framework.",
-    Icon: RiShieldCheckLine,
-  },
-  {
-    title: "Surface Gaps",
-    description:
-      "Flag gaps and inconsistencies across your evidence set.",
-    Icon: RiSearchEyeLine,
-  },
-  {
-    title: "Generate Findings",
-    description:
-      "Tie every finding to a control, evidence source, and severity rating.",
-    Icon: RiFileWarningLine,
-  },
-  {
-    title: "Collaborate in Context",
-    description:
-      "Request evidence, assign owners, and track to closure.",
-    Icon: RiTeamLine,
-  },
-  {
-    title: "Produce Reports",
-    description:
-      "Control breakdowns, summaries, and evidence packages — export-ready.",
-    Icon: RiFileChartLine,
-  },
+const ICONS: RemixiconComponentType[] = [
+  RiFolderLine,
+  RiShieldCheckLine,
+  RiSearchEyeLine,
+  RiFileWarningLine,
+  RiTeamLine,
+  RiFileChartLine,
 ];
 
-export function Platform() {
+export async function Platform() {
+  const c = await getContent();
+
+  const capabilities = [0, 1, 2, 3, 4, 5].map((i) => ({
+    title: c(`home.platform.${i}.title`),
+    description: c(`home.platform.${i}.description`),
+    Icon: ICONS[i],
+  }));
+
   return (
     <section id="product" className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-8 md:gap-16 items-center">
         <FadeUp>
           <h2 className="text-lg md:text-[2.5rem] tracking-tight leading-snug text-center">
-            Evidence in. Findings out. Reports ready.
+            {c("home.platform.heading")}
           </h2>
         </FadeUp>
 
-        <div className="w-full grid md:grid-cols-2 gap-6">
-          {CAPABILITIES.map((cap, i) => (
-            <FadeUp key={cap.title} delay={i * 60}>
-              <div className="bg-background shadow-2xl p-6 md:p-10 flex items-start gap-6">
+        <div className="w-full grid md:grid-cols-2 md:auto-rows-[1fr] gap-6">
+          {capabilities.map((cap, i) => (
+            <FadeUp key={i} delay={i * 60} className="h-full">
+              <div className="bg-background shadow-2xl p-6 md:p-10 flex items-start gap-6 h-full">
                 <div className="w-10 h-10 shrink-0 bg-accent flex items-center justify-center">
                   <cap.Icon size={20} className="text-white" />
                 </div>

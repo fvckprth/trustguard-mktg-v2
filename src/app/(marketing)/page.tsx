@@ -10,6 +10,7 @@ import { Mission } from "@/components/sections/mission";
 import { PilotTimeline } from "@/components/sections/pilot-timeline";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { JsonLd } from "@/components/json-ld";
+import { getContent } from "@/lib/content";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -34,7 +35,9 @@ const webSiteSchema = {
   url: "https://trustguardai.com",
 };
 
-export default function Home() {
+export default async function Home() {
+  const c = await getContent();
+
   return (
     <>
       <JsonLd
@@ -46,8 +49,12 @@ export default function Home() {
           ],
         }}
       />
-      <div className="flex flex-col gap-20 md:gap-40">
-        <Hero />
+      <div className="flex flex-col gap-20 md:gap-[120px]">
+        <Hero
+          headline={c("home.hero.headline")}
+          subhead={c("home.hero.subhead")}
+          cta={c("home.hero.cta")}
+        />
         <Overview />
         <Integrations />
         <FeatureShowcase />

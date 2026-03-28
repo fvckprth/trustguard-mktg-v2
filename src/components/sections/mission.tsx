@@ -1,28 +1,25 @@
 import Link from "next/link";
 import { FadeUp } from "@/components/fade-up";
+import { getContent } from "@/lib/content";
 
-export function Mission() {
+export async function Mission() {
+  const c = await getContent();
+
   return (
     <section className="px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto">
         <FadeUp className="relative bg-accent shadow-2xl overflow-hidden flex flex-col md:flex-row items-start justify-between p-8 md:p-40 gap-10 md:gap-16">
           <div className="flex flex-col gap-16">
             <div className="flex flex-col gap-10 text-lg md:text-[2rem] tracking-tight leading-snug max-w-full md:max-w-[540px] text-white">
-              <p>
-                Built for scale. Precision and elegance in every finding.
-                Surface what manual assessments can&apos;t.
-              </p>
-              <p>
-                Continuous deep monitoring meets operator mentality&mdash;built
-                by practitioners who managed risk at Fortune 500 companies.
-              </p>
+              <p>{c("home.mission.paragraph1")}</p>
+              <p>{c("home.mission.paragraph2")}</p>
             </div>
             <div>
               <Link
                 href="/company"
                 className="font-mono inline-flex items-center justify-center bg-background text-accent h-14 md:h-[64px] px-8 md:px-[40px] text-base md:text-[24px] tracking-[-0.04em] shadow-2xl hover:bg-background/90 transition-colors"
               >
-                Learn more
+                {c("home.mission.cta")}
               </Link>
             </div>
           </div>
