@@ -10,11 +10,11 @@ const STATS = [
 export function ReviewVelocity() {
   return (
     <section className="px-6 md:px-10">
-      <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row md:items-center gap-8 md:gap-20">
-        {/* Left – headline + CTA */}
-        <div className="flex flex-col gap-10 md:flex-1">
+      <div className="max-w-[1280px] mx-auto flex flex-col items-center gap-8 md:gap-16">
+        {/* Headline + CTA */}
+        <div className="flex flex-col items-center gap-8">
           <FadeUp>
-            <div className="flex flex-col gap-2 text-lg md:text-[2.5rem] tracking-tight leading-snug">
+            <div className="flex flex-col gap-2 text-lg md:text-[2.5rem] tracking-tight leading-snug text-center">
               <p className="text-foreground">Review more with the same team.</p>
               <p className="text-[#191919]">Broader coverage. Richer findings.</p>
             </div>
@@ -30,8 +30,8 @@ export function ReviewVelocity() {
           </FadeUp>
         </div>
 
-        {/* Right – stat cards */}
-        <div className="flex flex-col gap-6 md:w-[424px] shrink-0">
+        {/* Stat cards — horizontal row */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
           {STATS.map((stat, i) => (
             <FadeUp key={stat.label} delay={200 + i * 80}>
               <div className="bg-accent shadow-2xl p-10 flex flex-col gap-8">

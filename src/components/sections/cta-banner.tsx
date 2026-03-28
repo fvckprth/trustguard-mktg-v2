@@ -4,10 +4,10 @@ import { FadeUp } from "@/components/fade-up";
 
 export function CtaBanner() {
   return (
-    <section className="relative overflow-hidden px-6 md:px-10 py-20 md:py-40" style={{ background: "linear-gradient(to bottom, #F8F5F0, #ECEAE5)" }}>
+    <section className="relative overflow-hidden px-6 md:px-10 py-20" style={{ background: "linear-gradient(to bottom, #F8F5F0, #ECEAE5)" }}>
       {/* GodRays — accent blue beams, masked top and bottom */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none hidden md:block"
         style={{ maskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)" }}
       >
         <GodRays

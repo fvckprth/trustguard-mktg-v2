@@ -36,6 +36,11 @@ const VALUES = [
     description:
       "AI that reads every page and cross-references claims across documents — gaps that humans miss become visible.",
   },
+  {
+    title: "One engine, any framework",
+    description:
+      "SOC 2, ISO, FedRAMP, NIST, or your own custom framework.",
+  },
 ] as const;
 
 export default function CareersPage() {
@@ -71,12 +76,12 @@ export default function CareersPage() {
             </h2>
           </FadeUp>
 
-          <div className="w-full grid md:grid-cols-6 md:auto-rows-[1fr] gap-6">
+          <div className="w-full grid md:grid-cols-3 md:auto-rows-[1fr] gap-6">
             {VALUES.map((value, i) => (
               <FadeUp
                 key={value.title}
                 delay={i * 60}
-                className={`h-full ${i < 3 ? "md:col-span-2" : "md:col-span-3"}`}
+                className="h-full"
               >
                 <div
                   className="bg-background shadow-2xl h-full p-6 md:p-10 flex flex-col gap-2"
