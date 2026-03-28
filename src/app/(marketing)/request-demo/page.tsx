@@ -57,7 +57,7 @@ export default function RequestDemoPage() {
           </p>
         </div>
 
-        <div className="bg-surface rounded-md p-6 md:p-10">
+        <div className="bg-[#191919] rounded-md shadow-2xl p-6 md:p-10">
           {state.success ? (
             <div className="flex flex-col gap-4 py-10 items-center text-center">
               <p className="text-lg md:text-2xl tracking-tight text-foreground">
@@ -76,7 +76,7 @@ export default function RequestDemoPage() {
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="fullName"
-                    className="text-sm md:text-base tracking-tight leading-tight"
+                    className="text-sm md:text-base tracking-tight leading-tight text-white/50"
                   >
                     Full name
                   </label>
@@ -86,7 +86,7 @@ export default function RequestDemoPage() {
                     type="text"
                     autoComplete="name"
                     required
-                    className="h-12 rounded-md border border-border bg-background px-4 text-base leading-tight placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-foreground/20"
+                    className="h-12 bg-white/10 px-4 text-white text-base leading-tight placeholder:text-white/30 focus:outline-none"
                     placeholder="Jane Doe"
                   />
                 </div>
@@ -94,7 +94,7 @@ export default function RequestDemoPage() {
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="workEmail"
-                    className="text-sm md:text-base tracking-tight leading-tight"
+                    className="text-sm md:text-base tracking-tight leading-tight text-white/50"
                   >
                     Work email
                   </label>
@@ -104,7 +104,7 @@ export default function RequestDemoPage() {
                     type="email"
                     autoComplete="email"
                     required
-                    className="h-12 rounded-md border border-border bg-background px-4 text-base leading-tight placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-foreground/20"
+                    className="h-12 bg-white/10 px-4 text-white text-base leading-tight placeholder:text-white/30 focus:outline-none"
                     placeholder="jane@company.com"
                   />
                 </div>
@@ -112,7 +112,7 @@ export default function RequestDemoPage() {
                 <div className="flex flex-col gap-2 md:col-span-2">
                   <label
                     htmlFor="company"
-                    className="text-sm md:text-base tracking-tight leading-tight"
+                    className="text-sm md:text-base tracking-tight leading-tight text-white/50"
                   >
                     Company
                   </label>
@@ -122,7 +122,7 @@ export default function RequestDemoPage() {
                     type="text"
                     autoComplete="organization"
                     required
-                    className="h-12 rounded-md border border-border bg-background px-4 text-base leading-tight placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-foreground/20"
+                    className="h-12 bg-white/10 px-4 text-white text-base leading-tight placeholder:text-white/30 focus:outline-none"
                     placeholder="Acme Corp"
                   />
                 </div>
@@ -130,7 +130,7 @@ export default function RequestDemoPage() {
                 <div className="flex flex-col gap-2 md:col-span-2">
                   <label
                     htmlFor="message"
-                    className="text-sm md:text-base tracking-tight leading-tight"
+                    className="text-sm md:text-base tracking-tight leading-tight text-white/50"
                   >
                     Message
                   </label>
@@ -138,14 +138,14 @@ export default function RequestDemoPage() {
                     id="message"
                     name="message"
                     rows={6}
-                    className="rounded-md border border-border bg-background px-4 py-3 text-base leading-snug placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-foreground/20 resize-y"
+                    className="bg-white/10 px-4 py-3 text-white text-base leading-snug placeholder:text-white/30 focus:outline-none resize-y"
                     placeholder="What are you trying to improve in your current vendor review process?"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                <p className="text-sm md:text-base leading-snug text-muted max-w-[36rem]">
+                <p className="text-sm md:text-base leading-snug text-white/50 max-w-[36rem]">
                   Typical response time is one business day. We only use this
                   information to schedule and run your demo.
                 </p>
