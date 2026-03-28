@@ -5,7 +5,7 @@ const FOOTER_LINKS = {
   Company: [
     { label: "About", href: "/company" },
     { label: "Careers", href: "/careers" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact", href: "mailto:contact@trustguardai.com" },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/company/trustguardai/",
